@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'Login to donate to Abamo' /}
+#{include 'nav.html' /}
+
+<section class="ui segment" style=background:#c2ebe4>
+  <p>Log in here ...</p>
+</section>
+
+<section class="ui form segment" style=background:#d8f1f0>
+	<form action="/authenticate" method="POST">
+  	<div class="control-group">
+			<div class="controls two fields">
+				<div class="field">
+					<label class="control-label"> Email: </label>
+						<input type="text" name="email">
+				</div>
+				<div class="field">
+					<label class="control-label"> Password: </label>
+						<input type="password" name="password">
+				</div>
+			</div>
+		  	<button type = "submit" class="ui yellow button "><i class="sign in icon"></i>Login</button>
+		</div>
+	</form>
+</section>

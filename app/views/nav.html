@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'nav' /}
+
+<nav class="ui inverted yellow blue menu">
+		#{if 'index' == activePage} 
+    <a class="ui active item" href="/index"><i class="home icon"></i>Home</a>
+  #{/if}
+  #{else}
+  <a class="ui item" href="/index"><i class="home icon"></i>Home</a>
+    #{/else}
+		<a class="ui item" href="/signup"><i class="add user icon"></i>Signup</a>
+	#{elseif 'signup' == activeItem} 
+		<a class="ui active item" href="/signup"><i class="add user icon"></i>Signup</a>
+ 	#{/elseif} 
+ 		<a class="item" href="/login"><i class="sign in icon"></i>Login</a>
+ 	#{elseif 'login' == activeItem} 
+		<a class="ui active item" href="/login"><i class="user icon"></i>Login </a>
+	#{/elseif} 
+		<a class="item" href="/accounts/logout"><i class="sign out icon"></i>Logout</a>	
+	#{elseif 'logout' == active}
+		<a class="ui active item" href="/accounts/logout"><i class="sign out icon"></i>Logout</a>
+	#{/elseif}
+</nav>
