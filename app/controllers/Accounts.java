@@ -72,4 +72,3 @@ public class Accounts extends Controller
 	return logged_in_user;
   }
 }
-hi
