@@ -1,0 +1,35 @@
+
+User(Homer):
+    email: homer@simpson.com
+    firstName: Homer
+    lastName: Simpson
+    password: secret
+    usaCitizen: TRUE
+    
+User(Marge):
+    email: marge@simpson.com
+    firstName: Marge
+    lastName: Simpson
+    password: secret
+    usaCitizen: TRUE
+    
+User(Bart):
+    email: bart@simpson.com
+    firstName: Bart
+    lastName: Simpson
+    password: secret
+    usaCitizen: TRUE
+    
+User(Lisa):
+    email: lisa@simpson.com
+    firstName: Lisa
+    lastName: Simpson
+    password: secret
+    usaCitizen: TRUE
+    
+User(Maggie):
+    email: maggie@simpson.com
+    firstName: Maggie
+    lastName: Simpson   
+    password: secret
+    usaCitizen: TRUE

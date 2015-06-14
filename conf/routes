@@ -3,8 +3,8 @@
 # ~~~~
 
 # Home page
-GET     /index                                  Welcome.index
 GET     /			                                  Welcome.index
+GET			/index																	Welcome.index
 
 # Accounts
 GET			/signup																	Accounts.signup
@@ -13,6 +13,9 @@ GET 		/logout																	Accounts.logout
 
 POST		/authenticate 													Accounts.authenticate
 POST		/register																Accounts.register
+
+# DonationController
+GET 	  /donation																DonationController.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
