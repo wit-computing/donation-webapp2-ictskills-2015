@@ -35,51 +35,51 @@ User(Maggie):
     usaCitizen: TRUE
     
 Donation(donation1):
-    method: paypal
+    methodDonated: paypal
     received: 1000
     from: Homer
 
 Donation(donation2):
-    method: paypal
+    methodDonated: paypal
     received: 1000
     from: Marge
 
 Donation(donation3): 
-    method: paypal
+    methodDonated: paypal
     received: 1000
     from: Bart
 
 Donation(donation4):
-    method: paypal
+    methodDonated: paypal
     received: 1000
     from: Lisa
 
 Donation(donation5):
-    method: paypal
+    methodDonated: paypal
     received: 1000
     from: Maggie
 
 Donation(donation6):
-    method: direct
+    methodDonated: direct
     received: 100
     from: Homer
 
 Donation(donation7):
-    method: direct
+    methodDonated: direct
     received: 100
     from: Marge
 
 Donation(donation8):
-    method: direct
+    methodDonated: direct
     received: 100
     from: Lisa
 
 Donation(donation9):
-    method: direct
+    methodDonated: direct
     received: 100
     from: Bart
 
 Donation(donation10):
-    method: direct
+    methodDonated: direct
     received: 100
     from: Maggie

@@ -16,6 +16,7 @@ POST    /register																Accounts.register
 
 # Donation
 GET 	 /donation																DonationController.index
+GET		 /renderReport														DonationController.renderReport
 
 POST	 /donation/donate 												DonationController.donate
 
