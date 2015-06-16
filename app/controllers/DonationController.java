@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.*;
 import models.Donation;
 import models.User;
 import play.*;
@@ -17,8 +18,11 @@ public class DonationController extends Controller
     }
     else
     {
+      String prog = getPercentTargetAchieved();
+      String progress = prog + "%";
       Logger.info("Donation ctrler : user is " + user.email);
-      render(user);
+      Logger.info("Donation ctrler : percent target achieved " + progress);
+      render(user, progress);
     }
   }
   
@@ -42,5 +46,29 @@ public class DonationController extends Controller
   {
     Donation bal = new Donation(user, amountDonated, methodDonated);
     bal.save();
+  }
+  
+  private static long getDonationTarget()
+  {
+	return 20000;
+  }
+  
+  public static String getPercentTargetAchieved()
+  {
+    List<Donation> allDonations = Donation.findAll();
+    long total = 0;
+  
+    for (Donation donation : allDonations)
+    {
+      total += donation.received;
+    }
+    
+    long target = getDonationTarget();
+    long percentachieved = (total * 100 / target);
+    String progress = String.valueOf(percentachieved);
+    Logger.info("Percent of target achieved (string) " + progress + 
+    		"percentachieved (long)= " + percentachieved);
+  
+    return progress;
   }
 }
