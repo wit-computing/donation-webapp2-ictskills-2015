@@ -5,10 +5,66 @@
 
 <section class="ui segment" style=background:#c2ebe4>
 	<h1>
-		Welcome
+		Welcome ${user.firstName}
 	</h1>
+		<p> Please give generously </p>
 </section>
 	
 <section class="ui form segment" style=background:#d8f1f0>
-	<p> Please give generously </p>
+	<div class="ui grid">
+    <div class="six wide column">
+      <form class="ui form" action="/donation/donate" method="POST">
+        <table class="ui table">
+          <thead>
+            <tr>
+              <th>Make a donation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="ui selection dropdown">
+                  <input name="amountDonated" type="hidden">
+                    <div class="default text">Amount</div>
+                      <i class="dropdown icon"></i>
+                        <div class="menu">
+                          <div class="item" data-value="100">$100</div>
+                          <div class="item" data-value="500">$500</div>
+                          <div class="item" data-value="1000">$1000</div>
+                        </div>
+                </div>
+              </td>         
+            </tr>
+            <tr>
+              <td>
+                <div class="grouped inline fields">
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input id="paypal" name="methodDonated" value="paypal" checked="checked" type="radio"> 
+                        <label for="paypal">PayPal</label>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui radio checkbox">
+                      <input id="direct" name="methodDonated" value="direct" type="radio"> 
+                        <label for="direct">Direct</label>
+                    </div>
+                  </div>
+                </div>
+              </td>         
+            </tr>
+            <tr>
+              <td>
+                <div class="ui blue submit button">Donate <i class="add icon"></i></div>
+                  <div class="ui error message"></div>
+              </td>         
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+<hr>
 </section>
+
+<script src="@{'/public/javascripts/donate.js'}"></script>

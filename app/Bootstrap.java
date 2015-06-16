@@ -13,9 +13,9 @@ import models.*;
 @OnApplicationStart
 public class Bootstrap extends Job 
 { 
-    public void doJob() throws FileNotFoundException
-    {
+  public void doJob() throws FileNotFoundException
+  {
     Fixtures.deleteDatabase();
    	Fixtures.loadModels("data.yml");
-    }
+  }
 }
