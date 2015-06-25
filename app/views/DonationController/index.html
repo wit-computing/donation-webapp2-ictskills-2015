@@ -4,13 +4,13 @@
 #{include 'nav.html' /}
 
 <section class="ui segment" style=background:#c2ebe4>
-	<h2> Welcome ${user.firstName}</h2>
-		<h4> Please give generously </h4>
+	<h2 class="ui header"> Welcome ${user.firstName}</h2>
+		<h4 class="ui header"> Please give generously </h4>
 
 <section class="ui form segment" style=background:#d8f1f0>
 	<div class="ui grid">
   	<div class="six wide column">
-			<form class="ui form" action="/donation/donate" method="POST">
+			<form class="ui fluid form" action="/donation/donate" method="POST">
   			<table class="ui table">
     			<thead>
           	<tr>
@@ -64,7 +64,6 @@
     	<img src="/public/images/MoneyHomer.jpg">
     </div>
 
-<!-- Donation progress  -->
   <div class="ui segment" style=background:#e1f4f3>   
     <div class="ui indicating progress" id="progress">
     	<div class="bar">

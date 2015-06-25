@@ -4,18 +4,18 @@
 #{include 'nav.html' /}
 
 <section class="ui segment" style=background:#c2ebe4>
-  <h4>Log in here ...</h4>
+  <h4 class="ui header">Log in here ...</h4>
 
 <section class="ui form segment" style=background:#d8f1f0>
 	<form action="/authenticate" method="POST">
 		<div class="two fields">
-			<div class="field">
-				<label> Email: </label>
-					<input type="text" name="email">
+			<div class="ui left icon input field">
+				<input type="text" name="email" placeholder="Email">
+				<i class="user icon"></i>
 			</div>
-			<div class="field">
-				<label> Password: </label>
-					<input type="password" name="password">
+			<div class="ui left icon input field">
+				<input type="password" name="password" placeholder="Password" >
+				<i class="lock icon"></i>
 			</div>
 		</div>
 		  <button type = "submit" class="ui yellow button "><i class="sign in icon"></i>Login</button>
