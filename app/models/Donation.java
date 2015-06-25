@@ -15,8 +15,8 @@ public class Donation extends Model
   
   public Donation(User from, long received, String methodDonated)
   {
-	this.received 		= received;
+	this.received 			= received;
 	this.methodDonated 	= methodDonated;
-	this.from 			= from;
+	this.from 					= from;
   }
 }

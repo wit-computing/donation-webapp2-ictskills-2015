@@ -74,7 +74,7 @@ public class DonationController extends Controller
   
   public static void renderReport()
   {
-	List<Donation> donations = Donation.findAll();
+  	List<Donation> donations = Donation.findAll();
     render(donations);
   }
 }
