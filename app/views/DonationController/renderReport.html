@@ -5,6 +5,10 @@
 
 <section class="ui segment" style=background:#c2ebe4>
   <h1 class="ui center aligned header">List Donations</h1>
+ 
+  <tr><th class="ten wide">Name</th>
+    <th class="six wide">Status</th>
+  </tr></thead>
   
 <section class="ui form segment" style=background:#d8f1f0>
     <div class="ui grid">
@@ -12,9 +16,11 @@
         <div class="ui list">
           <table class="ui table">
             <thead>
+            	<tr>
               <th class="four wide">Donors</th>
               <th class="four wide center aligned">Amount($)</th>
               <th class="four wide center aligned">Method donated</th>
+              </tr>
             </thead>
             <tbody>   
 							#{list items: donations, as:'donation'}           
@@ -27,6 +33,7 @@
               #{/list}     
           </table>
            </div>
+       </div>
       </div>
       <div class="two column grid"></div>
     		<img src="/public/images/homerLeft.jpg">
