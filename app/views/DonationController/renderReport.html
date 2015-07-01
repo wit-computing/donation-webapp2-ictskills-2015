@@ -1,43 +1,40 @@
-#{extends 'main.html' /}
-#{set title:'Report' /}
-#{set activePage:'renderReport' /}
+#{extends 'main.html' /} 
+#{set title:'Report' /} 
+#{set activePage:'renderReport' /} 
 #{include 'nav.html' /}
 
-<section class="ui segment" style=background:#c2ebe4>
+<section class="ui inverted yellow segment">
   <h1 class="ui center aligned header">List Donations</h1>
- 
-  <tr><th class="ten wide">Name</th>
-    <th class="six wide">Status</th>
-  </tr></thead>
-  
-<section class="ui form segment" style=background:#d8f1f0>
+
+  <section class="ui form segment">
     <div class="ui grid">
-      <div class="ui ten wide column" >
+      <div class="ui ten wide column">
         <div class="ui list">
           <table class="ui table">
             <thead>
-            	<tr>
-              <th class="four wide">Donors</th>
-              <th class="four wide center aligned">Amount($)</th>
-              <th class="four wide center aligned">Method donated</th>
+              <tr>
+                <th class="four wide">Donors</th>
+                <th class="four wide center aligned">Amount($)</th>
+                <th class="four wide center aligned">Method donated</th>
               </tr>
             </thead>
-            <tbody>   
-							#{list items: donations, as:'donation'}           
-                <tr>
-                  <td> ${donation.from.email}</td>
-                  <td class="center aligned"> ${donation.received}</td>
-            			<td class="center aligned"> ${donation.methodDonated}</td>
-                </tr>
+            <tbody>
+              #{list items: donations, as:'donation'}
+              <tr>
+                <td>${donation.from.email}</td>
+                <td class="center aligned">${donation.received}</td>
+                <td class="center aligned">${donation.methodDonated}</td>
+              </tr>
             </tbody>
-              #{/list}     
+            #{/list}
           </table>
-           </div>
-       </div>
+        </div>
       </div>
-      <div class="two column grid"></div>
-    		<img src="/public/images/homerLeft.jpg">
-</section>     
 
+      <div class="two column grid"></div>
+      <img src="/public/images/homerLeft.jpg">
+    </div>
+  </section>
+</section>
 <script src="@{'/public/javascripts/donate.js'}"></script>
 <script> $('#progress').progress('increment', '${progress}'); </script>

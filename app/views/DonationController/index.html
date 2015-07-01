@@ -1,79 +1,81 @@
-#{extends 'main.html' /}
-#{set title:'Donation Request' /}
-#{set activePage:'donation' /}
+#{extends 'main.html' /} 
+#{set title:'Donation Request' /} 
+#{set activePage:'donation' /} 
 #{include 'nav.html' /}
 
-<section class="ui segment" style=background:#c2ebe4>
-	<h2 class="ui header"> Welcome ${user.firstName}</h2>
-		<h4 class="ui header"> Please give generously </h4>
+<section class="ui inverted yellow segment">
+  <h2 class="ui header">Welcome ${user.firstName}</h2>
+  <h4 class="ui header">Please give generously</h4>
 
-<section class="ui form segment" style=background:#d8f1f0>
-	<div class="ui grid">
-  	<div class="six wide column">
-			<form class="ui fluid form" action="/donation/donate" method="POST">
-  			<table class="ui table">
-    			<thead>
-          	<tr>
-              <th>Make a donation</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class="ui selection dropdown">
-                  <input name="amountDonated" type="hidden">
+  <section class="ui form segment">
+    <div class="ui grid">
+      <div class="six wide column">
+        <form class="ui fluid form" action="/donation/donate" method="POST">
+          <table class="ui table">
+            <thead>
+              <tr>
+                <th>Make a donation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="ui selection dropdown">
+                    <input name="amountDonated" type="hidden">
                     <div class="default text">Amount</div>
-                      <i class="dropdown icon"></i>
-                        <div class="menu">
-                          <div class="item" data-value="100">$100</div>
-                          <div class="item" data-value="500">$500</div>
-                          <div class="item" data-value="1000">$1000</div>
-                        </div>
-                </div>
-              </td>         
-            </tr>
-            <tr>
-              <td>
-                <div class="grouped inline fields">
-                  <div class="field">
-                    <div class="ui radio checkbox">
-                      <input id="paypal" name="methodDonated" value="paypal" checked="checked" type="radio"> 
-                        <label for="paypal">PayPal</label>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                      <div class="item" data-value="100">$100</div>
+                      <div class="item" data-value="500">$500</div>
+                      <div class="item" data-value="1000">$1000</div>
                     </div>
                   </div>
-                  <div class="field">
-                    <div class="ui radio checkbox">
-                      <input id="direct" name="methodDonated" value="direct" type="radio"> 
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="grouped inline fields">
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input id="paypal" name="methodDonated" value="paypal" checked="checked"
+                          type="radio"> <label for="paypal">PayPal</label>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input id="direct" name="methodDonated" value="direct" type="radio">
                         <label for="direct">Direct</label>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </td>         
-            </tr>
-            <tr>
-              <td>
-                <div class="ui blue submit button"><i class="add icon"></i>Donate </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="ui blue submit button">
+                    <i class="add icon"></i>Donate
+                  </div>
                   <div class="ui error message"></div>
-              </td>         
-            </tr>
-          </tbody>
-        </table>
-      </form>
-    </div>
-    <div class="two column grid"></div>
-    	<img src="/public/images/MoneyHomer.jpg">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div class="two column grid"></div>
+      <img src="/public/images/MoneyHomer.jpg">
     </div>
 
-  <div class="ui segment" style=background:#e1f4f3>   
-    <div class="ui indicating progress" id="progress">
-    	<div class="bar">
-    		<div class="progress"></div>
-    	</div>
-      	<div class="label">Amount Target Achieved ${progress}</div>
+    <div class="ui segment">
+      <div class="ui indicating progress" id="progress">
+        <div class="bar">
+          <div class="progress"></div>
+        </div>
+        <div class="label">Amount Target Achieved ${progress}</div>
+      </div>
     </div>
-  </div>
+  </section>
 </section>
-</section>      
-       
+
 <script src="@{'/public/javascripts/donate.js'}"></script>
-<script> $('#progress').progress('increment', '${progress}'); </script>
+<script>$('#progress').progress('increment', '${progress}');</script>

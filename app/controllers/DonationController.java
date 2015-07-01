@@ -25,7 +25,7 @@ public class DonationController extends Controller
       render(user, progress);
     }
   }
-  
+
   public static void donate(long amountDonated, String methodDonated)
   {
     User user = Accounts.getCurrentUser();
@@ -41,40 +41,40 @@ public class DonationController extends Controller
     }
     index();
   }
-  
+
   private static void addDonation(User user, long amountDonated, String methodDonated)
   {
     Donation bal = new Donation(user, amountDonated, methodDonated);
     bal.save();
   }
-  
+
   private static long getDonationTarget()
   {
-	return 20000;
+    return 20000;
   }
-  
+
   public static String getPercentTargetAchieved()
   {
     List<Donation> allDonations = Donation.findAll();
     long total = 0;
-  
+
     for (Donation donation : allDonations)
     {
       total += donation.received;
     }
-    
+
     long target = getDonationTarget();
     long percentachieved = (total * 100 / target);
     String progress = String.valueOf(percentachieved);
     Logger.info("Percent of target achieved (string) " + progress + 
-    		"percentachieved (long)= " + percentachieved);
-  
+        "percentachieved (long)= " + percentachieved);
+
     return progress;
   }
-  
+
   public static void renderReport()
   {
-  	List<Donation> donations = Donation.findAll();
+    List<Donation> donations = Donation.findAll();
     render(donations);
   }
 }
