@@ -10,9 +10,11 @@ GET			/index																	Welcome.index
 GET			/signup																	Accounts.signup
 GET 		/login																	Accounts.login
 GET 		/logout																	Accounts.logout
+GET			/edit																		Accounts.edit
 
 POST		/authenticate 													Accounts.authenticate
 POST    /register																Accounts.register
+POST    /changeDetails													Accounts.changeDetails
 
 # Donation
 GET 	 /donation																DonationController.index

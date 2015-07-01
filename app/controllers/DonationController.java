@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.*;
+
 import models.Donation;
 import models.User;
 import play.*;
@@ -74,7 +75,8 @@ public class DonationController extends Controller
 
   public static void renderReport()
   {
+    User user = Accounts.getCurrentUser();
     List<Donation> donations = Donation.findAll();
-    render(donations);
+    render(user, donations);
   }
 }

@@ -71,4 +71,28 @@ public class Accounts extends Controller
     }
     return user;
   }
+
+  public static void edit()
+  {
+    User user = Accounts.getCurrentUser();
+    render(user);
+  }
+
+  public static void changeDetails(String firstName, String lastName, Integer age, String email, String password)
+  {
+    String userId = session.get("logged_in_userid");
+    User user = User.findById(Long.parseLong(userId));
+
+    if (!firstName.isEmpty())
+      user.firstName = firstName;
+
+    if (!lastName.isEmpty())
+      user.lastName = lastName;
+
+    if (age != null)
+      user.age = age;
+
+    user.save();
+    DonationController.index();
+  }
 }

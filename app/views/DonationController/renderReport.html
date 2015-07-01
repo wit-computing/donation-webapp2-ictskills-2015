@@ -4,7 +4,7 @@
 #{include 'nav.html' /}
 
 <section class="ui inverted yellow segment">
-  <h1 class="ui center aligned header">List Donations</h1>
+  <h1 class="ui header">List Donations</h1>
 
   <section class="ui form segment">
     <div class="ui grid">
@@ -15,7 +15,7 @@
               <tr>
                 <th class="four wide">Donors</th>
                 <th class="two wide">Age</th>
-                <th class="four wide">State</th>
+                <th class="four wide"> State</th>
                 <th class="three wide">Amount($)</th>
                 <th class="four wide">Method donated</th>
               </tr>
@@ -27,7 +27,7 @@
                 <td>${donation.from.age}</td>
                 <td>${donation.from.state}</td>
                 <td>${donation.received}</td>
-                <td>${donation.methodDonated}</td>
+                <td class="center aligned">${donation.methodDonated}</td>
               </tr>
             </tbody>
             #{/list}

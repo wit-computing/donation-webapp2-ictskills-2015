@@ -3,7 +3,7 @@ User(Bart):
     lastName: Simpson
     age: 10
     state: Florida
-    email: bart@simpsons.com
+    email: bart@simpson.com
     password: secret
     usaCitizen: True
 
@@ -12,7 +12,7 @@ User(Homer):
     lastName: Simpson
     age: 48
     state: Massachusetts
-    email: homer@simpsons.com
+    email: homer@simpson.com
     password: secret
     usaCitizen: True
 
@@ -21,7 +21,7 @@ User(Marge):
     lastName: Simpson
     age: 44
     state: North Dakota
-    email: marge@simpsons.com
+    email: marge@simpson.com
     password: secret
     usaCitizen: True
 
@@ -30,7 +30,7 @@ User(Lisa):
     lastName: Simpson
     age: 11
     state: Washington
-    email: lisa@simpsons.com
+    email: lisa@simpson.com
     password: secret
     usaCitizen: True
 
@@ -39,7 +39,7 @@ User(Maggie):
     lastName: Simpson
     age: 1
     state: Indiana
-    email: maggie@simpsons.com
+    email: maggie@simpson.com
     password: secret
     usaCitizen: True
     

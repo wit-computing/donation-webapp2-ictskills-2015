@@ -16,7 +16,7 @@ public class User extends Model
   public String email;
   public String password;
   public boolean usaCitizen;
-  
+
   @OneToMany(mappedBy = "from", cascade = CascadeType.ALL)
   List<Donation> donations = new ArrayList<Donation>();
 

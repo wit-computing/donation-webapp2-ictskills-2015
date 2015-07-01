@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 
 <nav class="ui inverted blue menu">
-	#{if activePage=='home'} 
+  #{if activePage=='home'} 
     <a class="ui active item" href="/index"><i class="home icon"></i>Home</a>
   #{/if} #{else}
   	<a class="ui item" href="/index"><i class="home icon"></i>Home</a>
@@ -16,7 +16,12 @@
  	#{/if} #{else}
 		<a class="ui item" href="/login"><i class="user icon"></i>Log In </a>
 	#{/else} 
-	#{if activePage=='donation'}
+  #{if user !=null && activePage=='edit'}
+    <a class="ui active item" href="/edit"><i class="edit icon"></i>Edit Details</a>
+  #{/if} #{elseif user !=null}
+    <a class="ui item" href="/edit"><i class="edit icon"></i>Edit Details</a>
+  #{/elseif}
+  #{if activePage=='donation'}
 		<a class="ui active item" href="/donation"><i class="dollar icon"></i>Make Donation</a>	
 	#{/if} #{else}
 		<a class="ui item" href="/donation"><i class="dollar icon"></i>Make Donation</a>
