@@ -6,8 +6,8 @@ $('.ui.checkbox')
 
 $('.ui.form')
   .form({
-      'user.firstName': {
-      identifier  : 'user.firstName',
+      'firstName': {
+      identifier  : 'firstName',
       rules: [
         {
           type   : 'empty',
@@ -15,8 +15,8 @@ $('.ui.form')
         }
       ]
     },
-    'user.lastName': {
-      identifier  : 'user.lastName',
+    'lastName': {
+      identifier  : 'lastName',
       rules: [
         {
           type   : 'empty',
@@ -24,8 +24,8 @@ $('.ui.form')
         }
       ]
     },
-    'user.age': {
-      identifier  : 'user.age',
+    'age': {
+      identifier  : 'age',
       rules: [
         {
           type   : 'empty',
@@ -33,8 +33,8 @@ $('.ui.form')
         }
       ]
     },
-    'user.state': {
-      identifier  : 'user.state',
+    'state': {
+      identifier  : 'state',
       rules: [
         {
           type   : 'empty',
@@ -42,8 +42,8 @@ $('.ui.form')
         }
       ]
     },
-    'user.email': {
-      identifier  : 'user.email',
+    'email': {
+      identifier  : 'email',
       rules: [
         {
           type   : 'empty',
@@ -51,8 +51,8 @@ $('.ui.form')
         }
       ]
     },
-    'user.password': {
-      identifier : 'user.password',
+    'password': {
+      identifier : 'password',
       rules: [
         {
           type   : 'empty',
@@ -64,8 +64,8 @@ $('.ui.form')
         }
       ]
     },
-    'user.terms': {
-      identifier : 'user.terms',
+    'terms': {
+      identifier : 'terms',
       rules: [
         {
           type   : 'checked',

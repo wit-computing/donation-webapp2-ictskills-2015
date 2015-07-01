@@ -1,38 +1,47 @@
-
-User(Homer):
-    email: homer@simpson.com
-    firstName: Homer
-    lastName: Simpson
-    password: secret
-    usaCitizen: TRUE
-    
-User(Marge):
-    email: marge@simpson.com
-    firstName: Marge
-    lastName: Simpson
-    password: secret
-    usaCitizen: TRUE
-    
 User(Bart):
-    email: bart@simpson.com
     firstName: Bart
     lastName: Simpson
+    age: 10
+    state: Florida
+    email: bart@simpsons.com
     password: secret
-    usaCitizen: TRUE
-    
+    usaCitizen: True
+
+User(Homer):
+    firstName: Homer
+    lastName: Simpson
+    age: 48
+    state: Massachusetts
+    email: homer@simpsons.com
+    password: secret
+    usaCitizen: True
+
+User(Marge):
+    firstName: Marge
+    lastName: Simpson
+    age: 44
+    state: North Dakota
+    email: marge@simpsons.com
+    password: secret
+    usaCitizen: True
+
 User(Lisa):
-    email: lisa@simpson.com
     firstName: Lisa
     lastName: Simpson
+    age: 11
+    state: Washington
+    email: lisa@simpsons.com
     password: secret
-    usaCitizen: TRUE
-    
+    usaCitizen: True
+
 User(Maggie):
-    email: maggie@simpson.com
     firstName: Maggie
-    lastName: Simpson   
+    lastName: Simpson
+    age: 1
+    state: Indiana
+    email: maggie@simpsons.com
     password: secret
-    usaCitizen: TRUE
+    usaCitizen: True
     
 Donation(donation1):
     methodDonated: paypal

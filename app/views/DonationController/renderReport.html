@@ -14,16 +14,20 @@
             <thead>
               <tr>
                 <th class="four wide">Donors</th>
-                <th class="four wide center aligned">Amount($)</th>
-                <th class="four wide center aligned">Method donated</th>
+                <th class="two wide">Age</th>
+                <th class="four wide">State</th>
+                <th class="three wide">Amount($)</th>
+                <th class="four wide">Method donated</th>
               </tr>
             </thead>
             <tbody>
               #{list items: donations, as:'donation'}
               <tr>
                 <td>${donation.from.email}</td>
-                <td class="center aligned">${donation.received}</td>
-                <td class="center aligned">${donation.methodDonated}</td>
+                <td>${donation.from.age}</td>
+                <td>${donation.from.state}</td>
+                <td>${donation.received}</td>
+                <td>${donation.methodDonated}</td>
               </tr>
             </tbody>
             #{/list}
