@@ -14,7 +14,7 @@
 	#{if user==null && activePage=='login'}
  		<a class="ui active item" href="/login"><i class="sign in icon"></i>Log In</a>
  	#{/if} #{elseif user==null}
-		<a class="ui item" href="/login"><i class="user icon"></i>Log In </a>
+		<a class="ui item" href="/login"><i class="sign in icon"></i>Log In </a>
 	#{/elseif} 
   #{if user !=null && activePage=='donation'}
 		<a class="ui active item" href="/donation"><i class="dollar icon"></i>Make Donation</a>	
@@ -27,9 +27,9 @@
 		<a class="ui item" href="/donation/report"><i class="bar chart icon"></i>Donation Report</a>
 	#{/elseif}
   #{if user !=null && activePage=='edit'}
-    <a class="ui active item" href="/edit"><i class="edit icon"></i>Edit Details</a>
+    <a class="ui active item" href="/editDetails/index"><i class="edit icon"></i>Edit Details</a>
   #{/if} #{elseif user !=null}
-    <a class="ui item" href="/edit"><i class="edit icon"></i>Edit Details</a>
+    <a class="ui item" href="/editDetails/index"><i class="edit icon"></i>Edit Details</a>
   #{/elseif}
 	#{if user !=null && activePage=='logout'}
 		<a class="ui active item" href="/logout"><i class="sign out icon"></i>Log Out</a>	

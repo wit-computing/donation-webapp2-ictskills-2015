@@ -1,47 +1,72 @@
-User(Bart):
-    firstName: Bart
-    lastName: Simpson
-    age: 10
-    state: Florida
-    email: bart@simpson.com
-    password: secret
-    usaCitizen: True
 
 User(Homer):
     firstName: Homer
     lastName: Simpson
-    age: 48
-    state: Massachusetts
+    age: 39
     email: homer@simpson.com
     password: secret
     usaCitizen: True
+    address1: 14133 Apartment A
+    address2: Hawthorn Road
+    city: Springfield
+    state: Illinois
+    zipCode: IL03345
 
 User(Marge):
     firstName: Marge
     lastName: Simpson
-    age: 44
+    DOB: 32
     state: North Dakota
     email: marge@simpson.com
     password: secret
     usaCitizen: True
+    address1: 14133 Apartment A
+    address2: Hawthorn Road
+    city: Springfield
+    state: Illinois
+    zipCode: IL03345
 
+User(Bart):
+    firstName: Bart
+    lastName: Simpson
+    DOB: 10
+    state: Florida
+    email: bart@simpson.com
+    password: secret
+    usaCitizen: True
+    address1: 14133 Apartment A
+    address2: Hawthorn Road
+    city: Springfield
+    state: Illinois
+    zipCode: IL03345
+    
 User(Lisa):
     firstName: Lisa
     lastName: Simpson
-    age: 11
+    DOB: 9
     state: Washington
     email: lisa@simpson.com
     password: secret
     usaCitizen: True
+    address1: 14133 Apartment A
+    address2: Hawthorn Road
+    city: Springfield
+    state: Illinois
+    zipCode: IL03345
 
 User(Maggie):
     firstName: Maggie
     lastName: Simpson
-    age: 1
+    DOB: 1
     state: Indiana
     email: maggie@simpson.com
     password: secret
     usaCitizen: True
+    address1: 14133 Apartment A
+    address2: Hawthorn Road
+    city: Springfield
+    state: Illinois
+    zipCode: IL03345
     
 Donation(donation1):
     methodDonated: paypal

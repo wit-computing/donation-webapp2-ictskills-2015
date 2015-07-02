@@ -1,45 +1,36 @@
 #{extends 'main.html' /} 
-#{set title:'Signup for Abamo' /} 
-#{set activePage:'signup' /} 
+#{set title:'Edit Details' /} 
+#{set activePage:'edit' /} 
 #{include 'nav.html' /}
 
 <section class="ui inverted yellow segment">
-  <h1 class="ui header">Sign up here ...</h1>
+  <h1 class="ui header">Change your details here</h1>
 
   <section class="ui segment" id="mainSeg" style="background: #eeeeee">
-    <form class="ui form" action="/register" method="POST">
+    <form class="ui form" action="/changeDetails" method="POST">
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="firstName" placeholder="First Name">
+          <input type="text" name="firstName" placeholder=${user.firstName}>
         </div>
         <div class="ui input field">
-          <input type="text" name="lastName" placeholder="Last Name">
-        </div>
-      </div>
-      <div class="two fields">
-        <div class="ui left icon input field">
-          <input type="text" name="email" placeholder="Email"> <i class="user icon"></i>
-        </div>
-        <div class="ui left icon input field">
-          <input type="password" name="password" placeholder="Password"> <i
-            class="lock icon"></i>
+          <input type="text" name="lastName" placeholder=${user.lastName}>
         </div>
       </div>
       <div class="ui divider"></div>
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="address1" placeholder="Address Line 1">
+          <input type="text" name="address1" placeholder=${user.address1}>
         </div>
         <div class="ui input field">
-          <input type="text" name="address2" placeholder="Address Line 2">
+          <input type="text" name="address2" placeholder=${user.address2}>
         </div>
       </div>
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="city" placeholder="City">
+          <input type="text" name="city" placeholder=${user.city}>
         </div>
         <div class="ui input field">
-          <input type="text" name="zipCode" placeholder="Zip Code">
+          <input type="text" name="zipCode" placeholder=${user.zipCode}>
         </div>
       </div>
       <div class="ui input field">
@@ -99,24 +90,18 @@
         </select>
       </div>
       <div class="ui divider"></div>
-      <div class="ui two fields">
+      <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="age" placeholder="Age">
+          <input type="text" placeholder=${user.age}>
         </div>
       </div>
       <div class="ui divider"></div>
-      <div class="inline field">
-        <div class="ui checkbox">
-          <input name="usaCitizen" type="checkbox"> <label for="conditions"> Tick to
-            confirm you are a citizen of the USA</label>
-        </div>
+      <div class="ui buttons">
+        <button class="ui positive button">Save</button>
+        <div class="or"></div>
+        <button class="ui negative button" onClick="history.go(-1); return false;">Cancel</button>
       </div>
-      <div class="ui green submit button">
-        <i class="save icon"></i> Submit
-      </div>
-      <div class="ui error message"></div>
     </form>
   </section>
 </section>
-
-<script src="@{'/public/javascripts/signUp.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/editDetails.js'}" type="text/javascript" charset="${_response_encoding}"></script>
