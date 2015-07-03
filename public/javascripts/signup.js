@@ -1,3 +1,6 @@
+$('#search-select')
+  .dropdown();
+
 $('.ui.form')
 .form({
 	'firstName': {
