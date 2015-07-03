@@ -3,10 +3,10 @@
 #{set activePage:'login' /}
 #{include 'nav.html' /}
 
-<section class="ui inverted yellow segment">
-  <h1 class="ui header">Log in here ...</h1>
+<section class="ui segment" id="all">
+  <div class="ui text" id="h1">Log in here...</div>
 
-  <section class="ui segment" id="mainSeg" style="background: #eeeeee">
+  <section class="ui segment" id="mainSeg">
     <form class="ui form" action="/authenticate" method="POST">
       <div class="ui left icon input field">
         <input type="text" name="email" placeholder="Email"> <i class="user icon"></i>

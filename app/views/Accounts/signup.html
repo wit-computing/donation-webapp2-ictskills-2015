@@ -3,10 +3,10 @@
 #{set activePage:'signup' /} 
 #{include 'nav.html' /}
 
-<section class="ui inverted yellow segment">
-  <h1 class="ui header">Sign up here ...</h1>
+<section class="ui segment" id="all">
+  <div class="ui text" id="h1">Sign up here ...</div>
 
-  <section class="ui segment" id="mainSeg" style="background: #eeeeee">
+  <section class="ui segment" id="mainSeg">
     <form class="ui form" action="/register" method="POST">
       <div class="two fields">
         <div class="ui input field">
@@ -119,4 +119,5 @@
   </section>
 </section>
 
-<script src="@{'/public/javascripts/signUp.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/signUp.js'}" type="text/javascript"
+  charset="${_response_encoding}"></script>

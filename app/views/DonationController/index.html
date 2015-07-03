@@ -3,11 +3,12 @@
 #{set activePage:'donation' /} 
 #{include 'nav.html' /}
 
-<section class="ui inverted yellow segment">
-  <h1 class="ui header">Welcome ${user.firstName}</h1>
-  <h3 class="ui header">Please give generously</h3>
+<section class="ui segment" id="all">
+  <div class="ui text" id="h1">Welcome ${user.firstName}</div>
+  <div class="ui hidden divider"></div>
+  <div class="ui text" id="h3">Please give generously</div>
 
-  <section class="ui form segment">
+  <section class="ui segment" id="donateSeg">
     <div class="ui grid">
       <div class="six wide column">
         <form class="ui fluid form" action="/donation/donate" method="POST">

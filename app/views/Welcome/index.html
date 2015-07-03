@@ -3,20 +3,23 @@
 #{set activePage:'home' /} 
 #{include 'nav.html' /}
 
-<section class="ui inverted yellow segment">
-  <h1 class="ui header">Welcome</h1>
-  <section class="ui segment" id="welcomeGrid">
-    <div class="ui grid">
-      <div class="six wide column">
-        <h2 class="ui header">Homer for President!</h2>
-        <h5 class="ui header">Time for a change</h5>
-        <h5 class="ui header">Out with Boring Abamo</h5>
-        <h5 class="ui header">Giving has never been so easy</h5>
-        <h3 class="ui header">Just click <a href="/login"> here </a> to log in</h3>
-        <h4 class="ui header">Then go to the Donation page and empty your wallet</h4>
-      </div>
-      <div class="two wide column"></div>
-      <img src="/public/images/homer.jpg">
+<section class="ui segment" id="all">
+  <div class="ui text" id="h1">Welcome...</div>
+
+  <div class="ui table" id="mainSeg">
+    <div class="center aligned" id="welcomeText1">Homer for President!</div>
+    <div class="ui hidden divider"></div>
+    <div class="center aligned" id="welcomeText2">Time for a change!</div>
+    <div class="center aligned" id="welcomeText2">Out with Boring Abamo!</div>
+    <div class="center aligned" id="welcomeText2">Giving has never been so easy!</div>
+    <div class="ui hidden divider"></div>
+    <div class="center aligned" id="welcomeText3">
+      Just click <a href="/login">here</a> to log in!
     </div>
-  </section>
+    <div class="center aligned" id="welcomeText3">Then go to the Donation page and empty your
+      wallet!</div>
+  </div>
+
+  <img class="ui image" src="/public/images/simpson08.jpg" id="welcomeImg">
+
 </section>

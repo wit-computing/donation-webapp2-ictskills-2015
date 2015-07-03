@@ -1,38 +1,91 @@
-
-body
-{
-	margin: 2% 4% 2% 4%;
+body {
+  margin: 5% 7% 7% 7%;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  background: url(/public/images/usaFlag.jpg) no-repeat;
+  background-size: cover;
 }
 
-img 
-{
-	padding:10px;
+.sticky {
+  width: 86%;
+  margin-top: 1%;
+  margin-bottom: 4px;
 }
 
-#welcomeGrid
-{
-	padding:20px;
-	width: 90%
+#nav {
+  height: 35px;
+  padding: .5%;
 }
 
-h1
-{
-	padding:10px;
-	margin: 0;
+#all {
+  background: grey;
 }
 
-h2, h3, h4, h5
-{
-	padding:10px;
-	margin: 0;
+#mainSeg {
+  width: 54%;
+  float: left;
+  padding: 3%;
+  background: #eeeeee;
+}
+
+#h1 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  padding: .1%;
+  font-size: 2em;
+}
+
+#h3 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  padding: .1%;
+  font-size: 1.4em;
+}
+
+
+#welcomeText1 {
+  padding: 1.4%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 3.4em;
+  aligned: center;
+}
+
+#welcomeText2 {
+  padding: 2%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 2.4em;
+}
+
+#welcomeText3 {
+  padding: 1.4%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 1.4em;
+}
+
+#welcomeImg {
+  width: 45%;
+  padding: 10% 1%;
+  float: right;
 }
 
 .ui.input input::-moz-placeholder {
   color: rgba(0, 0, 0, 1);
 }
 
-#mainSeg
+#donateSeg
 {
-	width: 55%;
+  width: 90%;
+  padding: 3%;
+  background: #eeeeee;
 }
 
+#reportSeg
+{
+  width: 64%;
+  padding: 0%;
+  float: left;
+}
+
+#reportImg
+{
+  width: 31%;
+  padding: 0%;
+  float: right;
+}

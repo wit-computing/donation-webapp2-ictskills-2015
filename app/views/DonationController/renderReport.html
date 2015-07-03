@@ -3,21 +3,19 @@
 #{set activePage:'renderReport' /} 
 #{include 'nav.html' /}
 
-<section class="ui inverted yellow segment">
-  <h1 class="ui header">List Donations</h1>
+<section class="ui segment" id="all">
+  <div class="ui text" id="h1">List of Donations</div>
 
-  <section class="ui form segment">
-    <div class="ui grid">
-      <div class="ui ten wide column">
+  <div class="ui segment" id="reportSeg">
         <div class="ui list">
           <table class="ui table">
             <thead>
               <tr>
                 <th class="four wide">Donors</th>
                 <th class="two wide">Age</th>
-                <th class="four wide"> State</th>
-                <th class="three wide">Amount($)</th>
-                <th class="four wide">Method donated</th>
+                <th class="three wide"> State</th>
+                <th class="two wide">Amount($)</th>
+                <th class="two wide center aligned">Method Donated</th>
               </tr>
             </thead>
             <tbody>
@@ -33,12 +31,11 @@
             #{/list}
           </table>
         </div>
-      </div>
+  </div>
+ 
+ <img class="ui image" src="/public/images/homerLeft.jpg" id="reportImg">
 
-      <div class="two column grid"></div>
-      <img src="/public/images/homerLeft.jpg">
-    </div>
-  </section>
+
 </section>
 <script src="@{'/public/javascripts/donate.js'}"></script>
 <script> $('#progress').progress('increment', '${progress}'); </script>
