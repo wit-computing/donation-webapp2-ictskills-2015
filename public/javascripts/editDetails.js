@@ -1,2 +1,0 @@
-$('#search-select')
-  .dropdown();
