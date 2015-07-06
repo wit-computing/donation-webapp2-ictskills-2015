@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="ui input field">
-        <select class="ui search selection dropdown" id="search-select" name="user.state">
+        <select class="ui selection dropdown" id="search-select" name="user.state">
           <option value="">State</option>
           <option value="Alabama">Alabama</option>
           <option value="Alaska">Alaska</option>
@@ -104,6 +104,13 @@
           <input type="text" name="user.age" placeholder="Age">
         </div>
       </div>
+        <div class="ui divider"></div>
+        <select class="ui selection dropdown" id="search-select" name="user.candidate">
+        #{list items:candidates, as:'candidate'}
+          <option value="">Select a Candidate</option>
+          <option value="${candidate}">${candidate}</option>
+         #{/list}
+          </select>
       <div class="ui divider"></div>
       <div class="inline field">
         <div class="ui checkbox">

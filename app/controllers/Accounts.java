@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import models.User;
+import models.*;
 import play.*;
 import play.mvc.*;
 
@@ -17,7 +17,8 @@ public class Accounts extends Controller
 
   public static void signup()
   {
-    render();
+    List<Candidate> candidates = Candidate.findAll();
+    render(candidates);
   }
 
   public static void register(User user)
@@ -74,5 +75,12 @@ public class Accounts extends Controller
       user = User.findById(Long.parseLong(userId));
     }
     return user;
+  }
+  
+  public static Candidate getCurrentCandidate()
+  {
+      Candidate candidate = null;
+      candidate = Candidate.findByEmail();
+      return candidate;
   }
 }

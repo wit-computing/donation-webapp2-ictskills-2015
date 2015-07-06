@@ -12,19 +12,24 @@ public class User extends Model
 {
   public boolean usaCitizen;
   public Integer age;
+ 
   public String	firstName;
   public String	lastName;
+ 
   public String email;
   public String password;
+
   public String address1;
   public String address2;
   public String city;
   public String state;
   public String zipCode;
-
+  
+  public String candidate;
+  
   @OneToMany(mappedBy = "from", cascade = CascadeType.ALL)
-  List<Donation> donations = new ArrayList<Donation>();
-
+  public List<Donation> donations = new ArrayList<Donation>();
+  
   public static User findByEmail(String email)
   {
     return find("email", email).first();
@@ -34,4 +39,6 @@ public class User extends Model
   {
     return this.password.equals(password);
   }
+  
+ 
 }

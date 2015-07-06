@@ -12,4 +12,32 @@ User(Marge):
     city: Springfield
     state: Illinois
     zipCode: IL03345
+    candidate: Celery
 
+Candidate(Celery):
+    firstName: Celery
+    lastName: Clinton
+    email: celery@clinton.com
+    password: secret
+
+Candidate(Homer):
+    firstName: Homer
+    lastName: Simpson
+    email: homer@simpson.com
+    password: secret
+
+Candidate(Abamo):
+    firstName: Abamo
+    lastName: First
+    email: abamo@first.com
+    password: secret
+   
+Candidate(Harry):
+    firstName: Harry
+    lastName: Hill
+    email: harry@hill.com
+    password: secret
+ 
+Donation(donation1):
+  userFrom: Marge
+  candidateTo: Celery
