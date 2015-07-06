@@ -1,21 +1,8 @@
 
-User(Homer):
-    firstName: Homer
-    lastName: Simpson
-    age: 39
-    email: homer@simpson.com
-    password: secret
-    usaCitizen: True
-    address1: 14133 Apartment A
-    address2: Hawthorn Road
-    city: Springfield
-    state: Illinois
-    zipCode: IL03345
-
 User(Marge):
     firstName: Marge
     lastName: Simpson
-    DOB: 32
+    age: 32
     state: North Dakota
     email: marge@simpson.com
     password: secret
@@ -26,94 +13,3 @@ User(Marge):
     state: Illinois
     zipCode: IL03345
 
-User(Bart):
-    firstName: Bart
-    lastName: Simpson
-    DOB: 10
-    state: Florida
-    email: bart@simpson.com
-    password: secret
-    usaCitizen: True
-    address1: 14133 Apartment A
-    address2: Hawthorn Road
-    city: Springfield
-    state: Illinois
-    zipCode: IL03345
-    
-User(Lisa):
-    firstName: Lisa
-    lastName: Simpson
-    DOB: 9
-    state: Washington
-    email: lisa@simpson.com
-    password: secret
-    usaCitizen: True
-    address1: 14133 Apartment A
-    address2: Hawthorn Road
-    city: Springfield
-    state: Illinois
-    zipCode: IL03345
-
-User(Maggie):
-    firstName: Maggie
-    lastName: Simpson
-    DOB: 1
-    state: Indiana
-    email: maggie@simpson.com
-    password: secret
-    usaCitizen: True
-    address1: 14133 Apartment A
-    address2: Hawthorn Road
-    city: Springfield
-    state: Illinois
-    zipCode: IL03345
-    
-Donation(donation1):
-    methodDonated: paypal
-    received: 1000
-    from: Homer
-
-Donation(donation2):
-    methodDonated: paypal
-    received: 1000
-    from: Marge
-
-Donation(donation3): 
-    methodDonated: paypal
-    received: 1000
-    from: Bart
-
-Donation(donation4):
-    methodDonated: paypal
-    received: 1000
-    from: Lisa
-
-Donation(donation5):
-    methodDonated: paypal
-    received: 1000
-    from: Maggie
-
-Donation(donation6):
-    methodDonated: direct
-    received: 100
-    from: Homer
-
-Donation(donation7):
-    methodDonated: direct
-    received: 100
-    from: Marge
-
-Donation(donation8):
-    methodDonated: direct
-    received: 100
-    from: Lisa
-
-Donation(donation9):
-    methodDonated: direct
-    received: 100
-    from: Bart
-
-Donation(donation10):
-    methodDonated: direct
-    received: 100
-    from: Maggie

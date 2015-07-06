@@ -1,5 +1,8 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 import play.db.jpa.*;
@@ -12,7 +15,7 @@ public class Donation extends Model
 
   @ManyToOne
   public User from;
-
+  
   public Donation(User from, long received, String methodDonated)
   {
     this.received 			= received;

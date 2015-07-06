@@ -10,40 +10,40 @@
     <form class="ui form" action="/register" method="POST">
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="firstName" placeholder="First Name">
+          <input type="text" name="user.firstName" placeholder="First Name">
         </div>
         <div class="ui input field">
-          <input type="text" name="lastName" placeholder="Last Name">
+          <input type="text" name="user.lastName" placeholder="Last Name">
         </div>
       </div>
       <div class="two fields">
         <div class="ui left icon input field">
-          <input type="text" name="email" placeholder="Email"> <i class="user icon"></i>
+          <input type="text" name="user.email" placeholder="Email"> <i class="user icon"></i>
         </div>
         <div class="ui left icon input field">
-          <input type="password" name="password" placeholder="Password"> <i
+          <input type="password" name="user.password" placeholder="Password"> <i
             class="lock icon"></i>
         </div>
       </div>
       <div class="ui divider"></div>
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="address1" placeholder="Address Line 1">
+          <input type="text" name="user.address1" placeholder="Address Line 1">
         </div>
         <div class="ui input field">
-          <input type="text" name="address2" placeholder="Address Line 2">
+          <input type="text" name="user.address2" placeholder="Address Line 2">
         </div>
       </div>
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="city" placeholder="City">
+          <input type="text" name="user.city" placeholder="City">
         </div>
         <div class="ui input field">
-          <input type="text" name="zipCode" placeholder="Zip Code">
+          <input type="text" name="user.zipCode" placeholder="Zip Code">
         </div>
       </div>
       <div class="ui input field">
-        <select class="ui search selection dropdown" id="search-select" name="state">
+        <select class="ui search selection dropdown" id="search-select" name="user.state">
           <option value="">State</option>
           <option value="Alabama">Alabama</option>
           <option value="Alaska">Alaska</option>
@@ -101,13 +101,13 @@
       <div class="ui divider"></div>
       <div class="ui two fields">
         <div class="ui input field">
-          <input type="text" name="age" placeholder="Age">
+          <input type="text" name="user.age" placeholder="Age">
         </div>
       </div>
       <div class="ui divider"></div>
       <div class="inline field">
         <div class="ui checkbox">
-          <input name="usaCitizen" type="checkbox"> <label for="conditions"> Tick to
+          <input name="user.usaCitizen" type="checkbox"> <label for="conditions"> Tick to
             confirm you are a citizen of the USA</label>
         </div>
       </div>
@@ -119,5 +119,4 @@
   </section>
 </section>
 
-<script src="@{'/public/javascripts/signUp.js'}" type="text/javascript"
-  charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/signup.js'}" type="text/javascript" charset="${_response_encoding}"></script>

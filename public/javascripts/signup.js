@@ -1,10 +1,16 @@
 $('#search-select')
   .dropdown();
 
+$('.ui.dropdown')
+	.dropdown();
+
+$('.ui.checkbox')
+	.checkbox();
+
 $('.ui.form')
 .form({
-	'firstName': {
-		identifier  : 'firstName',
+	'user.firstName': {
+		identifier  : 'user.firstName',
 		rules: [
 		        {
 		        	type   : 'empty',
@@ -12,8 +18,8 @@ $('.ui.form')
 		        }
 		        ]
 	},
-	'lastName': {
-		identifier  : 'lastName',
+	'user.lastName': {
+		identifier  : 'user.lastName',
 		rules: [
 		        {
 		        	type   : 'empty',
@@ -21,8 +27,8 @@ $('.ui.form')
 		        }
 		        ]
 	},
-	'email': {
-		identifier  : 'email',
+	'user.email': {
+		identifier  : 'user.email',
 		rules: [
 		        {
 		        	type   : 'empty',
@@ -30,8 +36,8 @@ $('.ui.form')
 		        }
 		        ]
 	},
-	'password': {
-		identifier : 'password',
+	'user.password': {
+		identifier : 'user.password',
 		rules: [
 		        {
 		        	type   : 'empty',
@@ -43,8 +49,8 @@ $('.ui.form')
 		        }
 		        ]
 	},
-	'address1': {
-		identifier  : 'address1',
+	'user.address1': {
+		identifier  : 'user.address1',
 		rules: [
 		        {
 		        	type   : 'empty',
@@ -52,8 +58,17 @@ $('.ui.form')
 		        }
 		        ]
 	},
-	'city': {
-		identifier  : 'city',
+	'user.address2': {
+		identifier  : 'user.address2',
+		rules: [
+		        {
+		        	type   : 'empty',
+		        	prompt : 'Please enter your address'
+		        }
+		        ]
+	},
+	'user.city': {
+		identifier  : 'user.city',
 		rules: [
 		        {
 		        	type   : 'empty',
@@ -61,8 +76,8 @@ $('.ui.form')
 		        }
 		        ]
 	},
-	'zipCode': {
-		identifier  : 'zipCode',
+	'user.zipCode': {
+		identifier  : 'user.zipCode',
 		rules: [
 		        {
 		        	type   : 'empty',
@@ -70,8 +85,17 @@ $('.ui.form')
 		        }
 		        ]
 	},
-	'age': {
-		identifier  : 'age',
+	'user.state': {
+		identifier  : 'user.state',
+		rules: [
+		        {
+		        	type   : 'empty',
+		        	prompt : 'Please select your State'
+		        }
+		        ]
+	},
+	'user.age': {
+		identifier  : 'user.age',
 		rules: [
 		        {
 		        	type   : 'empty',
@@ -79,7 +103,7 @@ $('.ui.form')
 		        }
 		        ]
 	},
-	'usaCitizen': {
+	'user.usaCitizen': {
 		identifier : 'usaCitizen',
 		rules: [
 		        {

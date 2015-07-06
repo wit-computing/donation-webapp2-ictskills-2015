@@ -4,33 +4,33 @@
 #{include 'nav.html' /}
 
 <section class="ui segment" id="all">
-  <h1 class="ui header">Change your details here</h1>
-
-  <section class="ui segment" id="mainSeg" style="background: #eeeeee">
+  <div class="ui text" id="h1">Change your details here</div>
+  
+  <section class="ui segment" id="mainSeg">
     <form class="ui form" action="/changeDetails" method="POST">
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="firstName" placeholder=${user.firstName}>
+          <input type="text" name="firstName" value=${user.firstName}>
         </div>
         <div class="ui input field">
-          <input type="text" name="lastName" placeholder=${user.lastName}>
+          <input type="text" name="lastName" value=${user.lastName}>
         </div>
       </div>
       <div class="ui divider"></div>
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="address1" placeholder=${user.address1}>
+          <input type="text" name="address1" value=${user.address1}>
         </div>
         <div class="ui input field">
-          <input type="text" name="address2" placeholder=${user.address2}>
+          <input type="text" name="address2" value=${user.address2}>
         </div>
       </div>
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="city" placeholder=${user.city}>
+          <input type="text" name="city" value=${user.city}>
         </div>
         <div class="ui input field">
-          <input type="text" name="zipCode" placeholder=${user.zipCode}>
+          <input type="text" name="zipCode" value=${user.zipCode}>
         </div>
       </div>
       <div class="ui input field">
@@ -92,7 +92,7 @@
       <div class="ui divider"></div>
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" placeholder=${user.age}>
+          <input type="text" value=${user.age}>
         </div>
       </div>
       <div class="ui divider"></div>
