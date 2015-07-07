@@ -16,11 +16,16 @@ public class Candidate extends Model
   public String email;
   public String password;
   
-  @ManyToOne
-  public User user;
-  
-  @ManyToOne
-  public Donation donation;
+  @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL)
+  public List<User> users;
+   
+  public Candidate (String firstName, String lastName, String email, String password)
+  {
+    this.firstName  = firstName;
+    this.lastName   = lastName;
+    this.email      = email;
+    this.password   = password;
+  }
   
   public static Candidate findByEmail(String email)
   {
@@ -35,5 +40,11 @@ public class Candidate extends Model
   public String toString()
   {
     return firstName + " " + lastName;
+  }
+  
+  public void addUser(User user)
+  {
+    users.add(user);
+    user.save();
   }
 }

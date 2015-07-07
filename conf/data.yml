@@ -12,7 +12,6 @@ User(Marge):
     city: Springfield
     state: Illinois
     zipCode: IL03345
-    candidate: Celery
 
 Candidate(Celery):
     firstName: Celery
