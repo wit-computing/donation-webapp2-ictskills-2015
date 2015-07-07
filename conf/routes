@@ -21,9 +21,13 @@ POST		/changeDetails													EditDetails.changeDetails
 
 # Donation
 GET 	 /donation																DonationController.index
-GET		 /donation/report													DonationController.renderReport
 
 POST	 /donation/donate 												DonationController.donate
+
+#Report
+GET		 /report																	ReportController.index
+
+POST 	 /ReportController/filterCandidate				ReportController.filterCandidate
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

@@ -1,25 +1,11 @@
 
-User(Marge):
-    firstName: Marge
-    lastName: Simpson
-    age: 32
-    state: North Dakota
-    email: marge@simpson.com
-    password: secret
-    usaCitizen: True
-    address1: 14133 Apartment A
-    address2: Hawthorn Road
-    city: Springfield
-    state: Illinois
-    zipCode: IL03345
-
 Candidate(Celery):
     firstName: Celery
     lastName: Clinton
     email: celery@clinton.com
     password: secret
 
-Candidate(Homer):
+Candidate(Homer): 
     firstName: Homer
     lastName: Simpson
     email: homer@simpson.com
@@ -36,7 +22,63 @@ Candidate(Harry):
     lastName: Hill
     email: harry@hill.com
     password: secret
- 
+    
+User(Marge):
+    firstName: Marge
+    lastName: Simpson
+    age: 32
+    state: North Dakota
+    email: marge@simpson.com
+    password: secret
+    usaCitizen: True
+    address1: 14133 Apartment A
+    address2: Hawthorn Road
+    city: Springfield
+    state: Illinois
+    zipCode: IL03345
+    candidate: Celery
+
+User(Bart):
+    firstName: Bart
+    lastName: Simpson
+    age: 10
+    state: Florida
+    email: bart@simpson.com
+    password: secret
+    usaCitizen: True
+    address1: 14133 Apartment A
+    address2: Hawthorn Road
+    city: Springfield
+    state: Illinois
+    zipCode: IL03345
+    candidate: Homer
+         
 Donation(donation1):
-  userFrom: Marge
-  candidateTo: Celery
+    methodDonated: paypal
+    received: 1000
+    from: Marge
+
+Donation(donation2):
+    methodDonated: paypal
+    received: 1000
+    from: Bart
+
+Donation(donation3): 
+    methodDonated: paypal
+    received: 1000
+    from: Marge
+    
+Donation(donation4):
+    methodDonated: paypal
+    received: 1000
+    from: Bart
+
+Donation(donation5):
+    methodDonated: paypal
+    received: 1000
+    from: Marge
+
+Donation(donation6):
+    methodDonated: direct
+    received: 100
+    from: Bart

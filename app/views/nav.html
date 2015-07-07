@@ -26,10 +26,10 @@
         #{/if} #{else}
         <a class="ui item" href="/donation"><i class="dollar icon"></i>Make Donation</a> 
         #{/else} 
-        #{if activePage == 'renderReport'} 
-        <a class="ui active item" href="/donation/report"><i class="bar chart  icon"></i>Donation Report</a> 
+        #{if activePage == 'report'} 
+        <a class="ui active item" href="/reportController/index"><i class="bar chart  icon"></i>Donation Report</a> 
         #{/if} #{else} 
-        <a class="ui item" href="/donation/report"><i class="bar chart icon"></i>Donation Report</a> 
+        <a class="ui item" href="/reportController/index"><i class="bar chart icon"></i>Donation Report</a> 
         #{/else} 
         #{if activePage == 'edit'} 
         <a class="ui active item" href="/editDetails/index"><i class="edit icon"></i>Edit Details</a> 

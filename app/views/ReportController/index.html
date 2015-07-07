@@ -1,0 +1,53 @@
+#{extends 'main.html' /} 
+#{set title:'Report' /} 
+#{set activePage:'report' /} 
+#{include 'nav.html' /}
+
+<section class="ui segment" id="all">
+  <div class="ui text" id="h1">List of Donations</div>
+
+  <div class="ui segment" id="reportSeg">
+    <div class="ui list">
+      <table class="ui table">
+        <thead>
+          <tr>
+            <th class="three wide">Donors</th>
+            <th class="one wide">Age</th>
+            <th class="two wide">State</th>
+            <th class="two wide">Amount($)</th>
+            <th class="two wide">Method Donated</th>
+            <th class="two wide">Candidate</th>
+          </tr>
+        </thead>
+        <tbody>
+          #{list items:donations, as:'donation'}
+          <tr>
+            <td>${donation.from.email}</td>
+            <td>${donation.from.age}</td>
+            <td>${donation.from.state}</td>
+            <td>${donation.received}</td>
+            <td>${donation.methodDonated}</td>
+            <td>${donation.from.candidate}</td>
+          </tr>
+        </tbody>
+        #{/list}
+      </table>
+    </div>
+    <div></div>
+    <div class="ui list">
+      <form class="ui fluid form" action="/ReportController/filterCandidate" method="POST">
+        <select class="ui selection dropdown" id="search-select" name="email"> #{list
+          items:candidates, as:'candidate'}
+          <option value="">Select a Candidate</option>
+          <option value="${candidate.email}">${candidate}</option> #{/list}
+        </select>
+        <button type="submit" class="ui green submit button">Filter by Candidate</button>
+      </form>
+    </div>
+  </div>
+
+  <img class="ui image" src="/public/images/homerLeft.jpg" id="reportImg">
+
+
+</section>
+<script src="@{'/public/javascripts/donate.js'}"></script>

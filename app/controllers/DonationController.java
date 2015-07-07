@@ -13,34 +13,18 @@ public class DonationController extends Controller
   public static void index()
   {
     User user = Accounts.getCurrentUser();
-    if (user == null)
-    {
-      Logger.info("Donation class : Unable to getCurrentuser");
-      Accounts.login();
-    }
-    else
-    {
-      String prog = getPercentTargetAchieved();
-      String progress = prog + "%";
-      Logger.info("Donation ctrler : user is " + user.email);
-      Logger.info("Donation ctrler : percent target achieved " + progress);
-      render(user, progress);
-    }
+    String prog = getPercentTargetAchieved();
+    String progress = prog + "%";
+    Logger.info("Donation ctrler : user is " + user.email);
+    Logger.info("Donation ctrler : percent target achieved " + progress);
+    render(user, progress);
   }
 
   public static void donate(long amountDonated, String methodDonated)
   {
     User user = Accounts.getCurrentUser();
-    if (user == null)
-    {
-      Logger.info("Donation class : Unable to getCurrentuser");
-      Accounts.login();
-    }
-    else
-    {
-      Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
-      addDonation(user, amountDonated, methodDonated);
-    }
+    Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
+    addDonation(user, amountDonated, methodDonated);
     index();
   }
 
@@ -72,12 +56,5 @@ public class DonationController extends Controller
         "percentachieved (long)= " + percentachieved);
 
     return progress;
-  }
-
-  public static void renderReport()
-  {
-    User user = Accounts.getCurrentUser();
-    List<Donation> donations = Donation.findAll();
-    render(user, donations);
   }
 }

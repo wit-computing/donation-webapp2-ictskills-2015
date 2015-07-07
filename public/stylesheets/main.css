@@ -85,14 +85,14 @@ body {
 
 #reportSeg
 {
-  width: 64%;
-  padding: 0%;
+  width: 70%;
+  padding: 0.5%;
   float: left;
 }
 
 #reportImg
 {
-  width: 34%;
-  padding: 3%;
+  width: 30%;
+  padding: 2%;
   float: right;
 }
