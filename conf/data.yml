@@ -52,6 +52,36 @@ User(Bart):
     state: Illinois
     zipCode: IL03345
     candidate: Homer
+
+User(Lisa):
+    firstName: Lisa
+    lastName: Simpson
+    age: 9
+    state: Washington
+    email: lisa@simpson.com
+    password: secret
+    usaCitizen: True
+    address1: 14133 Apartment A
+    address2: Hawthorn Road
+    city: Springfield
+    state: Illinois
+    zipCode: IL03345
+    candidate: Abamo
+
+User(Maggie):
+    firstName: Maggie
+    lastName: Simpson
+    age: 1
+    state: Indiana
+    email: maggie@simpson.com
+    password: secret
+    usaCitizen: True
+    address1: 14133 Apartment A
+    address2: Hawthorn Road
+    city: Springfield
+    state: Illinois
+    zipCode: IL03345
+    candidate: Homer
          
 Donation(donation1):
     methodDonated: paypal
@@ -59,19 +89,19 @@ Donation(donation1):
     from: Marge
 
 Donation(donation2):
-    methodDonated: paypal
+    methodDonated: direct
     received: 1000
     from: Bart
 
 Donation(donation3): 
     methodDonated: paypal
     received: 1000
-    from: Marge
+    from: Lisa
     
 Donation(donation4):
-    methodDonated: paypal
+    methodDonated: direct
     received: 1000
-    from: Bart
+    from: Maggie
 
 Donation(donation5):
     methodDonated: paypal
@@ -81,4 +111,24 @@ Donation(donation5):
 Donation(donation6):
     methodDonated: direct
     received: 100
+    from: Lisa
+
+Donation(donation7):
+    methodDonated: paypal
+    received: 100
+    from: Marge
+
+Donation(donation8):
+    methodDonated: direct
+    received: 100
+    from: Lisa
+
+Donation(donation9):
+    methodDonated: paypal
+    received: 100
     from: Bart
+
+Donation(donation10):
+    methodDonated: direct
+    received: 100
+    from: Maggie
