@@ -16,10 +16,14 @@ public class Donation extends Model
   @ManyToOne
   public User from;
   
-  public Donation(User from, long received, String methodDonated)
+  @ManyToOne
+  public Candidate to;
+  
+  public Donation(User from, Candidate to, long received, String methodDonated)
   {
     this.received 			= received;
     this.methodDonated 	= methodDonated;
     this.from 					= from;
+    this.to             = to;
   }
 }

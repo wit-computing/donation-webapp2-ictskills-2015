@@ -100,15 +100,6 @@ $('.ui.form')
 		        }
 		        ]
 	},
-	'user.candidate': {
-		identifier  : 'user.candidate',
-		rules: [
-		        {
-		        	type   : 'empty',
-		        	prompt : 'Please select your Candidate'
-		        }
-		        ]
-	},
 	'user.usaCitizen': {
 		identifier : 'usaCitizen',
 		rules: [

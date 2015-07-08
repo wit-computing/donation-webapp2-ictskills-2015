@@ -10,6 +10,13 @@ import play.mvc.*;
 
 public class ReportController extends Controller
 {
+  @Before
+  static void checkAuthentification()
+  {
+    if(session.contains("logged_in_userid") == false)
+      Accounts.login();
+  }
+  
   public static void index()
   {
     User user = Accounts.getCurrentUser();
@@ -31,11 +38,12 @@ public class ReportController extends Controller
       
     for (Donation don : allDonations)
     {      
-      if (don.from.candidate == candidate)
+      if (don.to == candidate)
       {
          donations.add(don);
       }
     }
       renderTemplate("ReportController/index.html", user, donations, candidates);  
   } 
+  
 }

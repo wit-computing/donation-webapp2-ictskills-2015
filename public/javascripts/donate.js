@@ -1,4 +1,4 @@
-$('.ui.dropdown')
+$('.dropdown')
   .dropdown();
 
 $('.ui.form')
@@ -12,3 +12,4 @@ $('.ui.form')
     ]
   }
 });
+

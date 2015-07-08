@@ -21,17 +21,25 @@
             <tbody>
               <tr>
                 <td>
-                  <div class="ui selection dropdown">
-                    <input name="amountDonated" type="hidden">
-                    <div class="default text">Amount</div>
-                    <i class="dropdown icon"></i>
-                    <div class="menu">
-                      <div class="item" data-value="100">$100</div>
-                      <div class="item" data-value="500">$500</div>
-                      <div class="item" data-value="1000">$1000</div>
-                    </div>
-                  </div>
+     
+      <select class="ui dropdown" name="email"> 
+      #{list items:candidates, as:'candidate'}
+        <option value="">Select a Candidate</option>
+        <option value="${candidate.email}">${candidate}</option> 
+        #{/list}
+          </select>
+          </td>
+          <td>
+         
+                  <select class="ui dropdown" name="amountDonated">
+                    <option value="">Select Amount</option>
+                    <option value="100">$100</option>
+                    <option value="500">$500</option>
+                    <option value="1000">$1000</option>
+                  </select>
+
                 </td>
+                
               </tr>
               <tr>
                 <td>
@@ -66,16 +74,31 @@
       <img src="/public/images/MoneyHomer.jpg" id="donateImg">
     </div>
 
-    <div class="ui segment">
-      <div class="ui indicating progress" id="progress">
+<div class="ui segment" id="progressSeg">
+<div class="ui indicating progress active" id="progress">
+  <div style="transition-duration: 300ms" class="bar"></div>
+   <div class="progress"></div>
+   </div>
+  <div class="label">${progress}</div>
+</div>
+
+
+
+  <!--     <div class="ui indicating progress" >
         <div class="bar">
           <div class="progress"></div>
         </div>
-        <div class="label">Amount Target Achieved ${progress}</div>
+        <div class="label">${progress}</div>
       </div>
-    </div>
+    </div> -->
   </section>
 </section>
 
 <script src="@{'/public/javascripts/donate.js'}"></script>
-<script>$('#progress').progress('increment', '${progress}');</script>
+<script> 
+#{if progess}
+#{/if}
+#{else}
+   $('#progressSeg').hide();
+#{/else}
+$('#progress').progress('increment', '${progress}'); </script>

@@ -36,7 +36,6 @@ User(Marge):
     city: Springfield
     state: Illinois
     zipCode: IL03345
-    candidate: Celery
 
 User(Bart):
     firstName: Bart
@@ -51,7 +50,6 @@ User(Bart):
     city: Springfield
     state: Illinois
     zipCode: IL03345
-    candidate: Homer
 
 User(Lisa):
     firstName: Lisa
@@ -66,7 +64,6 @@ User(Lisa):
     city: Springfield
     state: Illinois
     zipCode: IL03345
-    candidate: Abamo
 
 User(Maggie):
     firstName: Maggie
@@ -81,54 +78,63 @@ User(Maggie):
     city: Springfield
     state: Illinois
     zipCode: IL03345
-    candidate: Homer
          
 Donation(donation1):
     methodDonated: paypal
     received: 1000
     from: Marge
+    to: Homer
 
 Donation(donation2):
     methodDonated: direct
     received: 1000
     from: Bart
+    to: Abamo
 
 Donation(donation3): 
     methodDonated: paypal
     received: 1000
     from: Lisa
+    to: Harry
     
 Donation(donation4):
     methodDonated: direct
     received: 1000
     from: Maggie
+    to: Harry
 
 Donation(donation5):
     methodDonated: paypal
     received: 1000
     from: Marge
+    to: Homer
 
 Donation(donation6):
     methodDonated: direct
     received: 100
     from: Lisa
+    to: Abamo
 
 Donation(donation7):
     methodDonated: paypal
     received: 100
     from: Marge
+    to: Abamo
 
 Donation(donation8):
     methodDonated: direct
     received: 100
     from: Lisa
+    to: Harry
 
 Donation(donation9):
     methodDonated: paypal
     received: 100
     from: Bart
+    to: Homer
 
 Donation(donation10):
     methodDonated: direct
     received: 100
     from: Maggie
+    to: Abamo

@@ -8,6 +8,13 @@ import play.mvc.*;
 
 public class EditDetails extends Controller
 {
+  @Before
+  static void checkAuthentification()
+  {
+    if(session.contains("logged_in_userid") == false)
+      Accounts.login();
+  }
+  
   public static void index()
   {
     User user = Accounts.getCurrentUser();

@@ -27,9 +27,6 @@ public class User extends Model
   
   @OneToMany(mappedBy = "from", cascade = CascadeType.ALL)
   public List<Donation> donations = new ArrayList<Donation>();
-
-  @ManyToOne
-  public Candidate candidate;
   
   public static User findByEmail(String email)
   {
@@ -40,9 +37,4 @@ public class User extends Model
   {
     return this.password.equals(password);
   }
-  
-  public void addCandidate(Candidate candidate)
-  {
-    this.candidate = candidate;
-  } 
 }

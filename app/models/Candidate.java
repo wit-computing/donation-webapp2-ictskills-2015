@@ -16,9 +16,9 @@ public class Candidate extends Model
   public String email;
   public String password;
   
-  @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL)
-  public List<User> users;
-   
+  @OneToMany(mappedBy = "to", cascade = CascadeType.ALL)
+  public List<Donation> donations = new ArrayList<Donation>();
+  
   public Candidate (String firstName, String lastName, String email, String password)
   {
     this.firstName  = firstName;
@@ -40,11 +40,5 @@ public class Candidate extends Model
   public String toString()
   {
     return firstName + " " + lastName;
-  }
-  
-  public void addUser(User user)
-  {
-    users.add(user);
-    user.save();
   }
 }

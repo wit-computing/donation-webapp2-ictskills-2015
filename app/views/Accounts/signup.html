@@ -105,13 +105,6 @@
         </div>
       </div>
       <div class="ui divider"></div>
-      <select class="ui dropdown" name="email"> 
-      #{list items:candidates, as:'candidate'}
-        <option value="">Select a Candidate</option>
-        <option value="${candidate.email}">${candidate}</option> 
-        #{/list}
-      </select>
-      <div class="ui divider"></div>
       <div class="inline field">
         <div class="ui checkbox">
           <input name="user.usaCitizen" type="checkbox"> <label for="conditions">

@@ -21,10 +21,9 @@ public class Accounts extends Controller
     render(candidates);
   }
 
-  public static void register(User user, String email)
+  public static void register(User user)
   {
-    Candidate candidate = Candidate.findByEmail(email);
-    user.addCandidate(candidate);
+   
     user.save();
     login();
   }
