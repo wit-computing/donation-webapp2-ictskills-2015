@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="ui input field">
-        <select class="ui search selection dropdown" id="search-select" name="state">
+        <select class="ui dropdown" name="state">
           <option value="">State</option>
           <option value="Alabama">Alabama</option>
           <option value="Alaska">Alaska</option>
@@ -92,7 +92,7 @@
       <div class="ui divider"></div>
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" value=${user.age}>
+          <input type="text" name="age" value=${user.age}>
         </div>
       </div>
       <div class="ui divider"></div>
@@ -101,6 +101,7 @@
         <div class="or"></div>
         <button class="ui negative button" onClick="history.go(-1); return false;">Cancel</button>
       </div>
+       <div class="ui error message"></div>
     </form>
   </section>
 </section>

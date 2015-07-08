@@ -33,21 +33,29 @@
         #{/list}
       </table>
     </div>
-    <div></div>
-    <div class="ui list">
-      <form class="ui fluid form" action="/ReportController/filterCandidate" method="POST">
-        <select class="ui selection dropdown" id="search-select" name="email"> #{list
-          items:candidates, as:'candidate'}
-          <option value="">Select a Candidate</option>
-          <option value="${candidate.email}">${candidate}</option> #{/list}
-        </select>
-        <button type="submit" class="ui green submit button">Filter by Candidate</button>
-      </form>
+    <div class="ui segment">
+      <div class="ui two column grid">
+        <div class="column">
+          <form class="ui form" action="/ReportController/filterCandidate" method="POST">
+            <select class="ui dropdown" name="email"> 
+            #{list items:candidates, as:'candidate'}
+              <option value="">Select a Candidate</option>
+              <option value="${candidate.email}">${candidate}</option> 
+            #{/list}
+            </select>
+            <button type="submit" class="ui green submit button">Filter by Candidate</button>
+            <div class="ui error message"></div>
+          </form>
+        </div>
+        <div class="column">
+          <form class="ui form" action="/ReportController/index" method="GET">
+            <button type="submit" class="ui green submit button">
+              <i class="refresh icon"></i>Refresh</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-
   <img class="ui image" src="/public/images/homerLeft.jpg" id="reportImg">
-
-
 </section>
-<script src="@{'/public/javascripts/donate.js'}"></script>
+<script src="@{'/public/javascripts/report.js'}"></script>

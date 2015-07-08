@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="ui input field">
-        <select class="ui selection dropdown" id="search-select" name="user.state">
+        <select class="ui dropdown" name="user.state">
           <option value="">Select a State</option>
           <option value="Alabama">Alabama</option>
           <option value="Alaska">Alaska</option>
@@ -105,7 +105,7 @@
         </div>
       </div>
       <div class="ui divider"></div>
-      <select class="ui selection dropdown" id="search-select" name="email"> 
+      <select class="ui dropdown" name="email"> 
       #{list items:candidates, as:'candidate'}
         <option value="">Select a Candidate</option>
         <option value="${candidate.email}">${candidate}</option> 

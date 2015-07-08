@@ -1,6 +1,5 @@
 $('.ui.dropdown')
-  .dropdown()
-;
+  .dropdown();
 
 $('.ui.form')
 .form({
@@ -12,5 +11,4 @@ $('.ui.form')
       }
     ]
   }
-})
-;
+});
