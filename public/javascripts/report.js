@@ -6,11 +6,16 @@ $('.ui.form')
 .form({
 	'email': {
 		identifier  : 'email',
-		rules: [
-		        {
+		rules: [{
 		        	type   : 'empty',
 		        	prompt : 'Please select a Candidate'
-		        }
-		        ]
+		        }]
+	},
+	'donorEmail': {
+		identifier  : 'donorEmail',
+		rules: [{
+		        	type   : 'empty',
+		        	prompt : 'Please select a Donor'
+		        }]
 	}
 });

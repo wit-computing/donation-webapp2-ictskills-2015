@@ -37,4 +37,9 @@ public class User extends Model
   {
     return this.password.equals(password);
   }
+  
+  public String toString()
+  {
+    return firstName + " " + lastName;
+  }
 }

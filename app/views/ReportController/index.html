@@ -34,7 +34,7 @@
       </table>
     </div>
     <div class="ui segment">
-      <div class="ui two column grid">
+      <div class="ui three column grid">
         <div class="column">
           <form class="ui form" action="/ReportController/filterCandidate" method="POST">
             <select class="ui dropdown" name="email"> 
@@ -44,6 +44,18 @@
             #{/list}
             </select>
             <button type="submit" class="ui green submit button">Filter by Candidate</button>
+            <div class="ui error message"></div>
+          </form>
+        </div>
+         <div class="column">
+          <form class="ui form" action="/ReportController/filterDonor" method="POST">
+            <select class="ui dropdown" name="donorEmail"> 
+            #{list items:users, as:'user'}
+              <option value="">Select a Donor</option>
+              <option value="${user.email}">${user}</option> 
+            #{/list}
+            </select>
+            <button type="submit" class="ui green submit button">Filter by Donor</button>
             <div class="ui error message"></div>
           </form>
         </div>

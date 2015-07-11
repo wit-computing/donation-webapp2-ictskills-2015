@@ -22,14 +22,15 @@ public class ReportController extends Controller
     User user = Accounts.getCurrentUser();
     List<Donation> donations = Donation.findAll();
     List<Candidate> candidates = Candidate.findAll();
+    List<User> users = User.findAll();
     
-    render(user, donations, candidates);
+    render(user, users, donations, candidates);
   }
   
   public static void filterCandidate(String email)
   {
     User user = Accounts.getCurrentUser();
-    
+    List<User> users = User.findAll();
     List<Donation> donations = new ArrayList<>();
     List<Donation> allDonations = Donation.findAll();
     List<Candidate> candidates = Candidate.findAll();
@@ -43,7 +44,62 @@ public class ReportController extends Controller
          donations.add(don);
       }
     }
-      renderTemplate("ReportController/index.html", user, donations, candidates);  
+      renderTemplate("ReportController/index.html", user, users, donations, candidates);  
   } 
   
+  public static void filterDonor(String donorEmail)
+  {
+    User user = Accounts.getCurrentUser();
+    List<Donation> donations = new ArrayList<Donation>();
+    List <User> users = User.findAll();
+    List<Candidate> candidates = Candidate.findAll();
+    List <Donation> allDonations = Donation.findAll();
+    
+    User donor = User.findByEmail(donorEmail);
+    for (Donation don : allDonations)
+    {
+      if (don.from.email == donor.email)
+      {
+        donations.add(don);
+      }
+    }
+    renderTemplate("ReportController/index.html", user, users, donations, candidates);  
+  }
+  
+  /*
+  static List<Donation> getDonors()
+  {
+    Set<String> emailSet = new HashSet<String>();
+    List<Donation> allDonations = Donation.findAll();
+    List<Donation> donorDonations = new ArrayList<>();
+        
+    for (Donation don : allDonations)
+    {
+      if (emailSet.add(don.from.email) && )
+      {
+        donorDonations.add(don);
+      }
+    }
+    return donorDonations;
+  }
+
+  public static void filterDonor(String donorEmail)
+  {
+    User user = User.findByEmail(donorEmail);
+    List<User> users = User.findAll();
+  
+    List<Donation> donorDonations = getDonors();
+
+    List<Candidate> candidates = Candidate.findAll();
+    List<Donation> donations = new ArrayList<>();
+      
+    for (Donation don : donorDonations)
+      {
+        if(don.from == user)
+        {
+          donations.add(don);
+        }
+      }
+    renderTemplate("ReportController/index.html", user, users, donations, candidates);  
+    }*/
 }

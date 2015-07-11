@@ -28,6 +28,7 @@ POST	 /donation/donate 												DonationController.donate
 GET		 /report																	ReportController.index
 
 POST 	 /ReportController/filterCandidate				ReportController.filterCandidate
+POST 	 /ReportController/filterDonor						ReportController.filterDonor
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
