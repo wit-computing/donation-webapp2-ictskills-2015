@@ -75,15 +75,16 @@
 
   <div class="ui segment" id="progressSeg">
 
+  
 <div class="ui indicating progress active" id="progress">
 
-  <div style="transition-duration: 300ms" class="bar">${progress}</div>
+  <div class="bar">${progress} </div>
 
    <div class="progress"></div>
 
    </div>
 
-  <div class="label">${progress}</div>
+  <div class="label"> ${progress} ${candidate}</div>
 
 </div>
 
@@ -91,12 +92,8 @@
     </div> 
    </section>
 
- </section>
-
- 
 
  <script src="@{'/public/javascripts/donate.js'}"></script>
 
-
-
-<script> $('#progress').progress('increment', '${progress}'); </script>
+<script> 
+	$('#progress').progress('increment', '${progress}'); </script>

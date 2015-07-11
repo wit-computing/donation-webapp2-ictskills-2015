@@ -20,7 +20,8 @@ $('.form')
 			prompt: 'Please select a candidate'
 		}]
 	}
-/*},
+
+	/*},
 
 {
 	onSuccess : function() {
@@ -41,6 +42,7 @@ $('.form')
 				  percent: response.progress
 				});
 			$('#progresslabel').text(response.progress + " % of target achieved to date for candidate " + response.candidate);
+			
 		}
 	  });
 }*/

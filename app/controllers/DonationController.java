@@ -21,9 +21,8 @@ public class DonationController extends Controller
   {  
     User user = Accounts.getCurrentUser();
     List<Candidate> candidates = Candidate.findAll();
-    
-    
-    String progress = "0" + "%";
+   
+    String progress = "0%";
     Logger.info("Donation ctrler : user is " + user.email);
     Logger.info("Donation ctrler : percent target achieved " + progress);
     render(user, candidates, progress);
@@ -33,14 +32,20 @@ public class DonationController extends Controller
   public static void donate(long amountDonated, String methodDonated, String email)
   {
     User user = Accounts.getCurrentUser();
+    
+    
     Candidate candidate = Candidate.findByEmail(email);
    
     List<Candidate> candidates = Candidate.findAll();
-       
-    String prog = getPercentTargetAchieved(candidate);
-    String progress =  candidate + "'s Target Achieved " + prog + "%";
-    Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
+    
     addDonation(user, candidate, amountDonated, methodDonated);
+    
+    String prog = getPercentTargetAchieved(candidate);
+    
+    String progress = prog + "%";
+    
+    Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
+    
     render("DonationController/index.html", user, candidates, progress);
   }
 
@@ -56,7 +61,7 @@ public class DonationController extends Controller
     return 20000;
   }
 
-  public static String getPercentTargetAchieved(Candidate candidate )
+  public static String getPercentTargetAchieved(Candidate candidate)
   {
     List<Donation> allDonations = Donation.findAll();
        
@@ -66,7 +71,7 @@ public class DonationController extends Controller
     {
       if (donation.to == candidate)
       {
-        Logger.info("donation added " + donation.toString() + " for cand " +candidate);
+        Logger.info("donation added " + donation.toString() + " for cand " + candidate);
         total += donation.received;
       }
     }
