@@ -8,10 +8,9 @@
 
   <section class="ui segment" id="donateSeg">
     <div class="ui grid">
-    <div class="six wide column">
-      <form class="ui form" action="/DonationController/donate" method="POST">
-     
-        <table class="ui table">
+      <div class="six wide column">
+        <form class="ui form" action="/DonationController/donate" method="POST">
+          <table class="ui table">
             <thead>
               <tr>
                 <th>Make a donation</th>
@@ -20,15 +19,17 @@
             <tbody>
               <tr>
                 <td>
-                <select class="ui dropdown" name="email"> 
-                #{list items:candidates, as:'candidate'}
-                    <option value="">Select a Candidate</option>
-                    <option value="${candidate.email}">${candidate}</option> 
-                #{/list}
-                </select>
-                </td>
-                <td>
-                <select class="ui dropdown" name="amountDonated">
+                  <select class="ui dropdown" name="email"> 
+                    #{list items:candidates, as:'candidate'}
+                      <option value="">Select a Candidate</option>
+                      <option value="${candidate.email}">${candidate}</option> 
+                    #{/list}
+                  </select>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <select class="ui dropdown" name="amountDonated">
                     <option value="">Select Amount</option>
                     <option value="100">$100</option>
                     <option value="500">$500</option>
@@ -66,34 +67,30 @@
               </tr>
             </tbody>
           </table>
-        
-       
-     
-      
-<img src="/public/images/MoneyHomer.jpg" id="donateImg"> 
+        </form>
+      </div>
+       <img src="/public/images/MoneyHomer.jpg" id="donateImg">
+    </div>
 
+   <div class="ui segment" id="progressSeg">
+      <div  class="ui indicating progress" id="progress">
+        <div style="transition-duration: 300ms; width: ${progress};" class="bar">
+        <div class="progress"></div>
+      </div>
+      <div class="label" id="progressLabel">${candProgress}</div>
+    </div>
+    </div>
+  </section>
+</section>
 
-  <div class="ui segment" id="progressSeg">
-
-  
-<div class="ui indicating progress active" id="progress">
-
-  <div class="bar">${progress} </div>
-
-   <div class="progress"></div>
-
-   </div>
-
-  <div class="label"> ${progress} ${candidate}</div>
-
+<div data-percent="28" class="ui active progress">
+  <div style="transition-duration: 300ms; width: 28%;" class="bar">
+    <div class="progress">28%</div>
+  </div>
+  <div class="label">Uploading Files</div>
 </div>
 
 
-    </div> 
-   </section>
+<script src="@{'/public/javascripts/donate.js'}"></script>
 
-
- <script src="@{'/public/javascripts/donate.js'}"></script>
-
-<script> 
-	$('#progress').progress('increment', '${progress}'); </script>
+<script>$('#progress').progress('increment', '${progress}');</script>

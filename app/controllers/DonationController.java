@@ -21,32 +21,28 @@ public class DonationController extends Controller
   {  
     User user = Accounts.getCurrentUser();
     List<Candidate> candidates = Candidate.findAll();
-   
     String progress = "0%";
+    String candProgress = "";
     Logger.info("Donation ctrler : user is " + user.email);
     Logger.info("Donation ctrler : percent target achieved " + progress);
-    render(user, candidates, progress);
+    render(user, candidates, progress, candProgress);
   }
   
   
   public static void donate(long amountDonated, String methodDonated, String email)
   {
     User user = Accounts.getCurrentUser();
-    
-    
-    Candidate candidate = Candidate.findByEmail(email);
-   
     List<Candidate> candidates = Candidate.findAll();
+    Candidate candidate = Candidate.findByEmail(email);
     
     addDonation(user, candidate, amountDonated, methodDonated);
-    
     String prog = getPercentTargetAchieved(candidate);
     
     String progress = prog + "%";
-    
+    String candProgress= prog + "% of target achieved to date for candidate " + candidate;    
     Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
     
-    render("DonationController/index.html", user, candidates, progress);
+    render("DonationController/index.html", user, candidates, progress, candProgress);
   }
 
   private static void addDonation(User user, Candidate candidate, long amountDonated, String methodDonated)
