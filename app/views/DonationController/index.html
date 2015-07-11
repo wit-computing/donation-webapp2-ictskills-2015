@@ -1,7 +1,5 @@
-#{extends 'main.html' /} 
-#{set title:'Donation Request' /} 
-#{set activePage:'donation' /} 
-#{include 'nav.html' /}
+#{extends 'main.html' /} #{set title:'Donation Request' /} #{set activePage:'donation' /} #{include
+'nav.html' /}
 
 <section class="ui segment" id="all">
   <div class="ui text" id="h1">Welcome ${user.firstName}</div>
@@ -10,9 +8,10 @@
 
   <section class="ui segment" id="donateSeg">
     <div class="ui grid">
-      <div class="six wide column">
-        <form class="ui fluid form" action="/donation/donate" method="POST">
-          <table class="ui table">
+    <div class="six wide column">
+      <form class="ui form" action="/DonationController/donate" method="POST">
+     
+        <table class="ui table">
             <thead>
               <tr>
                 <th>Make a donation</th>
@@ -21,25 +20,21 @@
             <tbody>
               <tr>
                 <td>
-     
-      <select class="ui dropdown" name="email"> 
-      #{list items:candidates, as:'candidate'}
-        <option value="">Select a Candidate</option>
-        <option value="${candidate.email}">${candidate}</option> 
-        #{/list}
-          </select>
-          </td>
-          <td>
-         
-                  <select class="ui dropdown" name="amountDonated">
+                <select class="ui dropdown" name="email"> 
+                #{list items:candidates, as:'candidate'}
+                    <option value="">Select a Candidate</option>
+                    <option value="${candidate.email}">${candidate}</option> 
+                #{/list}
+                </select>
+                </td>
+                <td>
+                <select class="ui dropdown" name="amountDonated">
                     <option value="">Select Amount</option>
                     <option value="100">$100</option>
                     <option value="500">$500</option>
                     <option value="1000">$1000</option>
-                  </select>
-
+                </select>
                 </td>
-                
               </tr>
               <tr>
                 <td>
@@ -61,44 +56,37 @@
               </tr>
               <tr>
                 <td>
-                  <div class="ui blue submit button">
-                    <i class="add icon"></i>Donate
+                  <div class="form-actions">
+                    <div class="ui green submit button">
+                      <i class="add icon"></i>Donate
+                    </div>
+                    <div class="ui error message"></div>
                   </div>
-                  <div class="ui error message"></div>
                 </td>
               </tr>
             </tbody>
           </table>
-        </form>
+        
+       
+     
+      
+<img src="/public/images/MoneyHomer.jpg" id="donateImg"> 
+
+
+    <div class="ui segment">
+      <div class="ui indicating progress active" id="progress">
+        <div class="bar">${progress}</div>
+        <div class="progress"></div>
       </div>
-      <img src="/public/images/MoneyHomer.jpg" id="donateImg">
+      <div class="label" id="progLabel"></div>
     </div>
 
-<div class="ui segment" id="progressSeg">
-<div class="ui indicating progress active" id="progress">
-  <div style="transition-duration: 300ms" class="bar"></div>
-   <div class="progress"></div>
-   </div>
-  <div class="label">${progress}</div>
-</div>
-
-
-
-  <!--     <div class="ui indicating progress" >
-        <div class="bar">
-          <div class="progress"></div>
-        </div>
-        <div class="label">${progress}</div>
-      </div>
-    </div> -->
+    </form>
+     </div>
+     </div>
   </section>
+
 </section>
 
 <script src="@{'/public/javascripts/donate.js'}"></script>
-<script> 
-#{if progess}
-#{/if}
-#{else}
-   $('#progressSeg').hide();
-#{/else}
-$('#progress').progress('increment', '${progress}'); </script>
+

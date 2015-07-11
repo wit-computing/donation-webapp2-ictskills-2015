@@ -17,13 +17,11 @@ public class Accounts extends Controller
 
   public static void signup()
   {
-    List<Candidate> candidates = Candidate.findAll();
-    render(candidates);
+    render();
   }
 
   public static void register(User user)
   {
-   
     user.save();
     login();
   }

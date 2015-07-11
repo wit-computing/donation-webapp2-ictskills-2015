@@ -1,69 +1,55 @@
 $('.dropdown')
-  .dropdown();
+.dropdown();
 
 $('.ui.form')
 .form({
 	'firstName': {
 		identifier  : 'firstName',
-		rules: [
-		        {
+		rules: [{
 		        	type   : 'empty',
 		        	prompt : 'Please enter your First Name'
-		        }
-		        ]
+		        }]
 	},
 	'lastName': {
 		identifier  : 'lastName',
-		rules: [
-		        {
+		rules: [{
 		        	type   : 'empty',
 		        	prompt : 'Please enter your Last Name'
-		        }
-		        ]
+		        }]
 	},
 	'address1': {
 		identifier  : 'address1',
-		rules: [
-		        {
+		rules: [{
 		        	type   : 'empty',
 		        	prompt : 'Please enter your address'
-		        }
-		        ]
+		        }]
 	},
 	'address2': {
 		identifier  : 'address2',
-		rules: [
-		        {
+		rules: [{
 		        	type   : 'empty',
 		        	prompt : 'Please enter your address'
-		        }
-		        ]
+		        }]
 	},
 	'city': {
 		identifier  : 'city',
-		rules: [
-		        {
+		rules: [{
 		        	type   : 'empty',
 		        	prompt : 'Please enter your City'
-		        }
-		        ]
+		        }]
 	},
 	'zipCode': {
 		identifier  : 'zipCode',
-		rules: [
-		        {
+		rules: [{
 		        	type   : 'empty',
 		        	prompt : 'Please enter your Zip Code'
-		        }
-		        ]
+		        }]
 	},
 	'age': {
 		identifier  : 'age',
-		rules: [
-		        {
+		rules: [{
 		        	type   : 'empty',
 		        	prompt : 'Please enter your age'
-		        }
-		        ]
+		        }]
 	}
 }); 
