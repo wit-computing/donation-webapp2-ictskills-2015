@@ -22,9 +22,11 @@ public class ReportController extends Controller
   public static void index()
   {
     User user = Accounts.getCurrentUser();
+    
     List<Donation> donations = Donation.findAll();
     List<Candidate> candidates = Candidate.findAll();
     List<User> users = User.findAll();
+    
     List <String> stateList = getStates();
     
     render(user, users, donations, stateList, candidates);
@@ -33,12 +35,13 @@ public class ReportController extends Controller
   public static void filterCandidate(String email)
   {
     User user = Accounts.getCurrentUser();
-    List<User> users = User.findAll();
     
-    List<Donation> donations = new ArrayList<>();
+    List<User> users = User.findAll();
     List<Donation> allDonations = Donation.findAll();
     List<Candidate> candidates = Candidate.findAll();
+    
     List <String> stateList = getStates();
+    List<Donation> donations = new ArrayList<>();
     
     Candidate candidate = Candidate.findByEmail(email);
       
@@ -50,19 +53,18 @@ public class ReportController extends Controller
       }
     }
     
-      Collections.sort(users, new UserComparator());
-      Collections.sort(candidates, new CandidateComparator());
       renderTemplate("ReportController/index.html", user, users, donations, stateList, candidates);  
   } 
   
   public static void filterDonor(String donorEmail)
   {
     User user = Accounts.getCurrentUser();
-    List<Donation> donations = new ArrayList<Donation>();
-    List <User> users = User.findAll();
     
+    List <User> users = User.findAll();
     List<Candidate> candidates = Candidate.findAll();
     List <Donation> allDonations = Donation.findAll();
+    
+    List<Donation> donations = new ArrayList<Donation>();
     List <String> stateList = getStates();
     
     User donor = User.findByEmail(donorEmail);
@@ -74,12 +76,14 @@ public class ReportController extends Controller
         donations.add(don);
       }
     }
+    
     renderTemplate("ReportController/index.html", user, donations, users, stateList, candidates);  
   }
 
   static List<String> getStates()
   {
     List <User> users = User.findAll();
+    
     Set<String> stateSet = new HashSet<String>();
     List<String> stateList = new ArrayList<String>();
     
@@ -112,6 +116,7 @@ public class ReportController extends Controller
         donations.add(don);
       }
     }
+    
     renderTemplate("ReportController/index.html", user, users, donations, stateList, candidates); 
   }
 }

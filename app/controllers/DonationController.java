@@ -42,7 +42,7 @@ public class DonationController extends Controller
     
     String prog = getPercentTargetAchieved(candidate);
     String progress = prog + "%";
-    String candProgress= prog + "% of target achieved to date for candidate " + candidate;    
+    String candProgress= prog + "% of Target Achieved to date for " + candidate;    
     
     Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
 
