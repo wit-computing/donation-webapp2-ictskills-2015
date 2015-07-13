@@ -29,6 +29,7 @@ GET		 /report																	ReportController.index
 
 POST 	 /ReportController/filterCandidate				ReportController.filterCandidate
 POST 	 /ReportController/filterDonor						ReportController.filterDonor
+POST 	 /ReportController/filterState						ReportController.filterState
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

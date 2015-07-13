@@ -46,10 +46,10 @@ User(Bart):
     password: secret
     usaCitizen: True
     address1: 14133 Apartment A
-    address2: Hawthorn Road
-    city: Springfield
-    state: Illinois
-    zipCode: IL03345
+    address2: Howth Road
+    city: Denver
+    state: Colorado
+    zipCode: CO03345
 
 User(Lisa):
     firstName: Lisa
@@ -60,10 +60,10 @@ User(Lisa):
     password: secret
     usaCitizen: True
     address1: 14133 Apartment A
-    address2: Hawthorn Road
+    address2: Smithfield Road
     city: Springfield
-    state: Illinois
-    zipCode: IL03345
+    state: Alabama
+    zipCode: AL03345
 
 User(Maggie):
     firstName: Maggie

@@ -7,6 +7,8 @@ import models.Donation;
 import models.User;
 import play.*;
 import play.mvc.*;
+import utils.CandidateComparator;
+import utils.UserComparator;
 
 public class ReportController extends Controller
 {
@@ -23,17 +25,20 @@ public class ReportController extends Controller
     List<Donation> donations = Donation.findAll();
     List<Candidate> candidates = Candidate.findAll();
     List<User> users = User.findAll();
+    List <String> stateList = getStates();
     
-    render(user, users, donations, candidates);
+    render(user, users, donations, stateList, candidates);
   }
   
   public static void filterCandidate(String email)
   {
     User user = Accounts.getCurrentUser();
     List<User> users = User.findAll();
+    
     List<Donation> donations = new ArrayList<>();
     List<Donation> allDonations = Donation.findAll();
     List<Candidate> candidates = Candidate.findAll();
+    List <String> stateList = getStates();
     
     Candidate candidate = Candidate.findByEmail(email);
       
@@ -41,10 +46,13 @@ public class ReportController extends Controller
     {      
       if (don.to == candidate)
       {
-         donations.add(don);
+        donations.add(don);
       }
     }
-      renderTemplate("ReportController/index.html", user, users, donations, candidates);  
+    
+      Collections.sort(users, new UserComparator());
+      Collections.sort(candidates, new CandidateComparator());
+      renderTemplate("ReportController/index.html", user, users, donations, stateList, candidates);  
   } 
   
   public static void filterDonor(String donorEmail)
@@ -52,10 +60,13 @@ public class ReportController extends Controller
     User user = Accounts.getCurrentUser();
     List<Donation> donations = new ArrayList<Donation>();
     List <User> users = User.findAll();
+    
     List<Candidate> candidates = Candidate.findAll();
     List <Donation> allDonations = Donation.findAll();
+    List <String> stateList = getStates();
     
     User donor = User.findByEmail(donorEmail);
+    
     for (Donation don : allDonations)
     {
       if (don.from.email == donor.email)
@@ -63,43 +74,44 @@ public class ReportController extends Controller
         donations.add(don);
       }
     }
-    renderTemplate("ReportController/index.html", user, users, donations, candidates);  
+    renderTemplate("ReportController/index.html", user, donations, users, stateList, candidates);  
+  }
+
+  static List<String> getStates()
+  {
+    List <User> users = User.findAll();
+    Set<String> stateSet = new HashSet<String>();
+    List<String> stateList = new ArrayList<String>();
+    
+    for (User user : users)
+    {
+      stateSet.add(user.state);
+    }
+    
+    stateList.addAll(stateSet);
+    Collections.sort(stateList, String.CASE_INSENSITIVE_ORDER);
+    
+    return stateList;
   }
   
-  /*
-  static List<Donation> getDonors()
+  public static void filterState(String state)
   {
-    Set<String> emailSet = new HashSet<String>();
+    User user = Accounts.getCurrentUser();
+    
+    List <User> users = User.findAll();
+    List<Candidate> candidates = Candidate.findAll();
     List<Donation> allDonations = Donation.findAll();
-    List<Donation> donorDonations = new ArrayList<>();
-        
+    
+    List<String> stateList = getStates();
+    List<Donation> donations = new ArrayList<>();
+
     for (Donation don : allDonations)
     {
-      if (emailSet.add(don.from.email) && )
+      if (don.from.state.equals(state))
       {
-        donorDonations.add(don);
+        donations.add(don);
       }
     }
-    return donorDonations;
+    renderTemplate("ReportController/index.html", user, users, donations, stateList, candidates); 
   }
-
-  public static void filterDonor(String donorEmail)
-  {
-    User user = User.findByEmail(donorEmail);
-    List<User> users = User.findAll();
-  
-    List<Donation> donorDonations = getDonors();
-
-    List<Candidate> candidates = Candidate.findAll();
-    List<Donation> donations = new ArrayList<>();
-      
-    for (Donation don : donorDonations)
-      {
-        if(don.from == user)
-        {
-          donations.add(don);
-        }
-      }
-    renderTemplate("ReportController/index.html", user, users, donations, candidates);  
-    }*/
 }

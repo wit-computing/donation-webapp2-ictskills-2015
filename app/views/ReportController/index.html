@@ -59,6 +59,20 @@
             <div class="ui error message"></div>
           </form>
         </div>
+         <div class="column">
+          <form class="ui form" action="/ReportController/filterState" method="POST">
+            <select class="ui dropdown" name="state"> 
+             
+            #{list items:stateList, as:'state'}
+              <option value="">Select a State</option>
+              <option value="${state}">${state}</option> 
+            #{/list}
+         
+           </select>
+            <button type="submit" class="ui green submit button">Filter by State</button>
+            <div class="ui error message"></div>
+          </form>
+        </div>
         <div class="right aligned column">
           <form class="ui form" action="/ReportController/index" method="GET">
             <button type="submit" class="ui green submit button">

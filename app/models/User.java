@@ -42,4 +42,9 @@ public class User extends Model
   {
     return firstName + " " + lastName;
   }
+  
+  public String getName()
+  {
+    return firstName;
+  }
 }

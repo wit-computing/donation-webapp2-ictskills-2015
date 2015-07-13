@@ -1,5 +1,7 @@
-#{extends 'main.html' /} #{set title:'Donation Request' /} #{set activePage:'donation' /} #{include
-'nav.html' /}
+#{extends 'main.html' /} 
+#{set title:'Donation Request' /} 
+#{set activePage:'donation' /} 
+#{include 'nav.html' /}
 
 <section class="ui segment" id="all">
   <div class="ui text" id="h1">Welcome ${user.firstName}</div>
@@ -82,14 +84,6 @@
     </div>
   </section>
 </section>
-
-<div data-percent="28" class="ui active progress">
-  <div style="transition-duration: 300ms; width: 28%;" class="bar">
-    <div class="progress">28%</div>
-  </div>
-  <div class="label">Uploading Files</div>
-</div>
-
 
 <script src="@{'/public/javascripts/donate.js'}"></script>
 
