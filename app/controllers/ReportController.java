@@ -7,8 +7,6 @@ import models.Donation;
 import models.User;
 import play.*;
 import play.mvc.*;
-import utils.CandidateComparator;
-import utils.UserComparator;
 
 public class ReportController extends Controller
 {

@@ -27,7 +27,7 @@ public class User extends Model
   
   @OneToMany(mappedBy = "from", cascade = CascadeType.ALL)
   public List<Donation> donations = new ArrayList<Donation>();
-  
+
   public static User findByEmail(String email)
   {
     return find("email", email).first();
@@ -41,10 +41,5 @@ public class User extends Model
   public String toString()
   {
     return firstName + " " + lastName;
-  }
-  
-  public String getName()
-  {
-    return firstName;
   }
 }
