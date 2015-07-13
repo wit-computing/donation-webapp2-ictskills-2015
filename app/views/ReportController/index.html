@@ -34,8 +34,8 @@
       </table>
     </div>
     <div class="ui segment">
-      <div class="ui three column grid">
-        <div class="column">
+      <div class="ui four column grid">
+        <div class="four wide column">
           <form class="ui form" action="/ReportController/filterCandidate" method="POST">
             <select class="ui dropdown" name="email"> 
             #{list items:candidates, as:'candidate'}
@@ -43,11 +43,12 @@
               <option value="${candidate.email}">${candidate}</option> 
             #{/list}
             </select>
+            <div class="ui hidden divider"></div>
             <button type="submit" class="ui green submit button">Filter by Candidate</button>
             <div class="ui error message"></div>
           </form>
         </div>
-         <div class="column">
+         <div class="four wide column">
           <form class="ui form" action="/ReportController/filterDonor" method="POST">
             <select class="ui dropdown" name="donorEmail"> 
             #{list items:users, as:'user'}
@@ -55,11 +56,12 @@
               <option value="${user.email}">${user}</option> 
             #{/list}
             </select>
+            <div class="ui hidden divider"></div>
             <button type="submit" class="ui green submit button">Filter by Donor</button>
             <div class="ui error message"></div>
           </form>
         </div>
-         <div class="column">
+         <div class="four wide column">
           <form class="ui form" action="/ReportController/filterState" method="POST">
             <select class="ui dropdown" name="state"> 
              
@@ -69,11 +71,12 @@
             #{/list}
          
            </select>
+           <div class="ui hidden divider"></div>
             <button type="submit" class="ui green submit button">Filter by State</button>
             <div class="ui error message"></div>
           </form>
         </div>
-        <div class="right aligned column">
+        <div class="right aligned fourwide column">
           <form class="ui form" action="/ReportController/index" method="GET">
             <button type="submit" class="ui green submit button">
               <i class="refresh icon"></i>Refresh</button>
