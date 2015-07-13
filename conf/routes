@@ -14,6 +14,13 @@ GET 		/logout																	Accounts.logout
 POST		/authenticate 													Accounts.authenticate
 POST    /register																Accounts.register
 
+# Administrator
+GET			/Administrator/login										Administrator.login
+GET 		/Administrator/logout										Administrator.logout
+GET     /Administrator/report										Administrator.report
+
+POST		/Administrator/authenticate							Administrator.authenticate
+
 # Edit Details
 GET			/edit																		EditDetails.index
 

@@ -1,0 +1,57 @@
+#{extends 'main.html' /} 
+#{set title:'Administrator Home' /} 
+#{set activePage:'report' /} 
+#{include 'adminNav.html' /}
+
+<section class="ui segment" id="all">
+  <div class="ui text" id="h1">Administrator Reports</div>
+    <div class="ui segment" id="adminReportSeg">
+      <div class="ui two column grid">
+      <div class="ui column">
+      <div class="ui text" id="h1">Donors</div>
+        <div class="ui list">
+          <table class="ui table">
+            <thead>
+              <tr>
+                <th class="three wide">Name</th>
+                <th class="two wide">State</th>
+                <th class="two wide">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              #{list items:users, as:'user'}
+              <tr>
+                <td>${user}</td>
+                <td>${user.state}</td>
+                <td>${user.email}</td>
+              </tr>
+            </tbody>
+              #{/list}
+            </table>
+      </div>
+      </div>
+      <div class="ui column">
+      <div class="ui text" id="h1">Candidates</div>
+        <div class="ui list">
+          <table class="ui table">
+            <thead>
+              <tr>
+                <th class="three wide">Name</th>
+                <th class="two wide">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              #{list items:candidates, as:'candidate'}
+              <tr>
+                <td class="three wide">${candidate}</td>
+                <td class="two wide">${candidate.email}</td>
+              </tr>
+            </tbody>
+            #{/list}
+          </table>
+        </div>
+        </div>
+      </div>
+      </div>
+</section>
+
