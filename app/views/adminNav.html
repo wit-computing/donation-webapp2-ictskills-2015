@@ -17,11 +17,21 @@
      #{/if}
      #{if admin != null}
         #{if activePage == 'report'} 
-        <a class="ui active item" href="/Administrator/report"><i class="bar chart icon"></i>Admin Report</a>
+        <a class="ui active item" href="/report"><i class="bar chart icon"></i>Admin Report</a>
         #{/if} #{else} 
-        <a class="ui item" href="/Administrator/report"><i class="bar chart icon"></i>Admin Report</a> 
+        <a class="ui item" href="/report"><i class="bar chart icon"></i>Admin Report</a> 
         #{/else}
-        <a class="ui item" href="/Administrator/logout"><i class="sign out icon"></i>Admin Logout</a> 
+         #{if activePage == 'register'} 
+        <a class="ui active item" href="/candidatecontroller/index"><i class="add user icon"></i>Register Candidate</a>
+        #{/if} #{else} 
+        <a class="ui item" href="/candidatecontroller/index"><i class="add user icon"></i>Register Candidate</a> 
+        #{/else}
+         #{if activePage == 'create'} 
+        <a class="ui active item" href="/officecontroller/index"><i class="building outline icon"></i>Create Office</a>
+        #{/if} #{else} 
+        <a class="ui item" href="/officecontroller/index"><i class="building outline icon"></i>Create Office</a> 
+        #{/else}
+        <a class="ui item" href="/logout"><i class="sign out icon"></i>Admin Logout</a> 
      #{/if}
     </nav>
   </div>

@@ -16,16 +16,11 @@ public class Candidate extends Model
   public String email;
   public String password;
   
-  @OneToMany(mappedBy = "to", cascade = CascadeType.ALL)
-  public List<Donation> donations = new ArrayList<Donation>();
+  @ManyToOne
+  public Office running;
   
-  public Candidate (String firstName, String lastName, String email, String password)
-  {
-    this.firstName  = firstName;
-    this.lastName   = lastName;
-    this.email      = email;
-    this.password   = password;
-  }
+  @OneToMany(mappedBy = "to", cascade = CascadeType.ALL)
+  List<Donation> donations = new ArrayList<Donation>();
   
   public static Candidate findByEmail(String email)
   {
@@ -40,5 +35,10 @@ public class Candidate extends Model
   public String toString()
   {
     return firstName + " " + lastName;
+  }
+  
+  public void addOffice(Office running)
+  {
+    this.running = running;
   }
 }

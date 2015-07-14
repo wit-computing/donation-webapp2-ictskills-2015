@@ -46,7 +46,7 @@ public class DonationController extends Controller
     
     Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
 
-    render("DonationController/index.html", user, candidates, progress, candProgress);
+    renderTemplate("DonationController/index.html", user, candidates, progress, candProgress);
   }
 
   private static void addDonation(User user, Candidate candidate, long amountDonated, String methodDonated)

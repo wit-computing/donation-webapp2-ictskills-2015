@@ -15,11 +15,21 @@ POST		/authenticate 													Accounts.authenticate
 POST    /register																Accounts.register
 
 # Administrator
-GET			/Administrator/login										Administrator.login
-GET 		/Administrator/logout										Administrator.logout
-GET     /Administrator/report										Administrator.report
+GET			/login																	Administrator.login
+GET 		/logout																	Administrator.logout
+GET     /report																	Administrator.report
 
-POST		/Administrator/authenticate							Administrator.authenticate
+POST		/authenticate														Administrator.authenticate
+
+# Candidate
+GET 		/index																	CandidateController.index
+
+POST		/newCandidate														CandidateController.newCandidate
+
+#Office
+GET			/index																	OfficeController.index
+
+POST		/newOffice															OfficeController.newOffice	
 
 # Edit Details
 GET			/edit																		EditDetails.index
@@ -34,9 +44,9 @@ POST	 /donation/donate 												DonationController.donate
 #Report
 GET		 /report																	ReportController.index
 
-POST 	 /ReportController/filterCandidate				ReportController.filterCandidate
-POST 	 /ReportController/filterDonor						ReportController.filterDonor
-POST 	 /ReportController/filterState						ReportController.filterState
+POST 	 /filterCandidate													ReportController.filterCandidate
+POST 	 /filterDonor															ReportController.filterDonor
+POST 	 /filterState															ReportController.filterState
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

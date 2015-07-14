@@ -4,11 +4,12 @@
 #{include 'adminNav.html' /}
 
 <section class="ui segment" id="all">
-  <div class="ui text" id="h1">Administrator Reports</div>
-    <div class="ui segment" id="adminReportSeg">
-      <div class="ui two column grid">
-      <div class="ui column">
-      <div class="ui text" id="h1">Donors</div>
+  <div class="ui text" id="h1">Administrator Reports...</div>
+  <div class="ui segment" id="adminReportSeg">
+
+    <div class="ui two column grid">
+      <div class="column">
+        <div class="ui text" id="h1">Donors</div>
         <div class="ui list">
           <table class="ui table">
             <thead>
@@ -26,18 +27,19 @@
                 <td>${user.email}</td>
               </tr>
             </tbody>
-              #{/list}
-            </table>
+            #{/list}
+          </table>
+        </div>
       </div>
-      </div>
-      <div class="ui column">
-      <div class="ui text" id="h1">Candidates</div>
+      <div class="column">
+        <div class="ui text" id="h1">Candidates</div>
         <div class="ui list">
           <table class="ui table">
             <thead>
               <tr>
                 <th class="three wide">Name</th>
                 <th class="two wide">Email</th>
+                <th class="two wide">Office</th>
               </tr>
             </thead>
             <tbody>
@@ -45,13 +47,15 @@
               <tr>
                 <td class="three wide">${candidate}</td>
                 <td class="two wide">${candidate.email}</td>
+                <td class="two wide">${candidate.running}</td>
               </tr>
             </tbody>
             #{/list}
           </table>
         </div>
-        </div>
       </div>
-      </div>
+    </div>
+  </div>
+  
 </section>
 

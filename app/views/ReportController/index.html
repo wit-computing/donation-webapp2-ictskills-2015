@@ -36,7 +36,7 @@
     <div class="ui segment">
       <div class="ui four column grid">
         <div class="four wide column">
-          <form class="ui form" action="/ReportController/filterCandidate" method="POST">
+          <form class="ui form" action="/filterCandidate" method="POST">
             <select class="ui dropdown" name="email"> 
             #{list items:candidates, as:'candidate'}
               <option value="">Select a Candidate</option>
@@ -49,7 +49,7 @@
           </form>
         </div>
          <div class="four wide column">
-          <form class="ui form" action="/ReportController/filterDonor" method="POST">
+          <form class="ui form" action="/filterDonor" method="POST">
             <select class="ui dropdown" name="donorEmail"> 
             #{list items:users, as:'user'}
               <option value="">Select a Donor</option>
@@ -62,7 +62,7 @@
           </form>
         </div>
          <div class="four wide column">
-          <form class="ui form" action="/ReportController/filterState" method="POST">
+          <form class="ui form" action="/filterState" method="POST">
             <select class="ui dropdown" name="state"> 
              
             #{list items:stateList, as:'state'}

@@ -2,31 +2,45 @@
 Admin(admin):
     userName: admin
     password: secret
+
+Office(office1):
+    title: President
+    description: The Office of The President of The United States of America
+    candidate: [Celery, Homer]
+    
+Office(office2):
+    title: Vice-President
+    description: The Office of The Vice-President of The United States of America
+    candidate: [Abamo, Harry]
     
 Candidate(Celery):
     firstName: Celery
     lastName: Clinton
     email: celery@clinton.com
     password: secret
+    running: office1
 
 Candidate(Homer): 
     firstName: Homer
     lastName: Simpson
     email: homer@simpson.com
     password: secret
+    running: office1
 
 Candidate(Abamo):
     firstName: Abamo
     lastName: First
     email: abamo@first.com
     password: secret
-   
+    running: office2
+    
 Candidate(Harry):
     firstName: Harry
     lastName: Hill
     email: harry@hill.com
     password: secret
-    
+    running: office2
+   
 User(Marge):
     firstName: Marge
     lastName: Simpson

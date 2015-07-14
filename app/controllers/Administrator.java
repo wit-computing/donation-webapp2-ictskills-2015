@@ -9,7 +9,7 @@ import play.*;
 import play.mvc.*;
 
 public class Administrator extends Controller
-{
+{  
   public static void index()
   {
     render();
@@ -69,7 +69,6 @@ public class Administrator extends Controller
     Admin admin = getCurrentAdmin();
     List<User> users = User.findAll();
     List<Candidate> candidates = Candidate.findAll();
-    
     render(admin, users, candidates);
   }
 }

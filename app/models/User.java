@@ -26,7 +26,7 @@ public class User extends Model
   public String zipCode;
   
   @OneToMany(mappedBy = "from", cascade = CascadeType.ALL)
-  public List<Donation> donations = new ArrayList<Donation>();
+  List<Donation> donations = new ArrayList<Donation>();
 
   public static User findByEmail(String email)
   {
