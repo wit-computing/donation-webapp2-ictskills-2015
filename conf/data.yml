@@ -1,4 +1,7 @@
 
+Admin(admin):
+    userName: admin
+    password: secret
     
 Candidate(Celery):
     firstName: Celery

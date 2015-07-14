@@ -10,8 +10,8 @@ import play.db.jpa.*;
 @Entity
 public class Admin extends Model
 {
-  public String userName = "admin";
-  public String password = "secret";
+  public String userName;
+  public String password;
 
   public static Admin findByUserName(String userName)
   {
