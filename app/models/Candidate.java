@@ -15,6 +15,7 @@ public class Candidate extends Model
  
   public String email;
   public String password;
+  public long donationTarget;
   
   @ManyToOne
   public Office running;

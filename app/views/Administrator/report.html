@@ -8,14 +8,14 @@
   <div class="ui segment" id="adminReportSeg">
 
     <div class="ui two column grid">
-      <div class="column">
+      <div class="column" id="donorRepCol">
         <div class="ui text" id="h1">Donors</div>
         <div class="ui list">
           <table class="ui table">
             <thead>
               <tr>
                 <th class="three wide">Name</th>
-                <th class="two wide">State</th>
+                <th class="three wide">State</th>
                 <th class="two wide">Email</th>
               </tr>
             </thead>
@@ -31,7 +31,7 @@
           </table>
         </div>
       </div>
-      <div class="column">
+      <div class="column" id="candRepCol">
         <div class="ui text" id="h1">Candidates</div>
         <div class="ui list">
           <table class="ui table">
@@ -40,14 +40,16 @@
                 <th class="three wide">Name</th>
                 <th class="two wide">Email</th>
                 <th class="two wide">Office</th>
+                <th class="two wide">Target</th>
               </tr>
             </thead>
             <tbody>
               #{list items:candidates, as:'candidate'}
               <tr>
-                <td class="three wide">${candidate}</td>
-                <td class="two wide">${candidate.email}</td>
-                <td class="two wide">${candidate.running}</td>
+                <td>${candidate}</td>
+                <td>${candidate.email}</td>
+                <td>${candidate.running}</td>
+                <td>${candidate.donationTarget}</td>
               </tr>
             </tbody>
             #{/list}

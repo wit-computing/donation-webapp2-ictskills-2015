@@ -19,6 +19,7 @@ Candidate(Celery):
     email: celery@clinton.com
     password: secret
     running: office1
+    donationTarget: 20000
 
 Candidate(Homer): 
     firstName: Homer
@@ -26,6 +27,7 @@ Candidate(Homer):
     email: homer@simpson.com
     password: secret
     running: office1
+    donationTarget: 30000
 
 Candidate(Abamo):
     firstName: Abamo
@@ -33,6 +35,7 @@ Candidate(Abamo):
     email: abamo@first.com
     password: secret
     running: office2
+    donationTarget: 20000
     
 Candidate(Harry):
     firstName: Harry
@@ -40,7 +43,8 @@ Candidate(Harry):
     email: harry@hill.com
     password: secret
     running: office2
-   
+    donationTarget: 30000
+    
 User(Marge):
     firstName: Marge
     lastName: Simpson

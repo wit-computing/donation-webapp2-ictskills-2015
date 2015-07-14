@@ -56,9 +56,10 @@ public class DonationController extends Controller
     bal.save();
   }
 
-  private static long getDonationTarget()
+  private static long getDonationTarget(Candidate candidate)
   {
-    return 20000;
+    long target = candidate.donationTarget;
+    return target;
   }
 
   public static String getPercentTargetAchieved(Candidate candidate)
@@ -76,7 +77,7 @@ public class DonationController extends Controller
       }
     }
 
-    long target = getDonationTarget();
+    long target = getDonationTarget(candidate);
     long percentachieved = (total * 100 / target);
     String progress = String.valueOf(percentachieved);
     Logger.info("Percent of target achieved (string) " + progress + "percentachieved (long)= " + percentachieved);
