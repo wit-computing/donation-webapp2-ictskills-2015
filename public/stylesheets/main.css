@@ -27,6 +27,13 @@ body {
   background: #eeeeee;
 }
 
+#signUpSeg {
+  width: 64%;
+  float: left;
+  padding: 3%;
+  background: #eeeeee;
+}
+
 #h1 {
   font-family: "Comic Sans MS", cursive, sans-serif;
   padding: .1%;

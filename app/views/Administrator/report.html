@@ -25,6 +25,12 @@
                 <td>${user}</td>
                 <td>${user.state}</td>
                 <td>${user.email}</td>
+                
+                #{if user.located!=null}
+                <td>${user.located.lat}</td>
+                <td>${user.located.lng}</td>
+                #{/if}
+             
               </tr>
             </tbody>
             #{/list}

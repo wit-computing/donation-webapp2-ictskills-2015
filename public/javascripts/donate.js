@@ -19,5 +19,5 @@ $('.form')
 			type: 'empty',
 			prompt: 'Please select a candidate'
 		}]
-}
+	}
 });

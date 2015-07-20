@@ -2,6 +2,8 @@ package controllers;
 
 import java.util.*;
 
+import org.json.simple.JSONObject;
+
 import models.Candidate;
 import models.Donation;
 import models.User;
@@ -37,12 +39,24 @@ public class DonationController extends Controller
     User user = Accounts.getCurrentUser();
     List<Candidate> candidates = Candidate.findAll();
     Candidate candidate = Candidate.findByEmail(email);
-
+      
     addDonation(user, candidate, amountDonated, methodDonated);
     
     String prog = getPercentTargetAchieved(candidate);
-    String progress = prog + "%";
-    String candProgress= prog + "% of Target Achieved to date for " + candidate;    
+    
+    String progress = "";
+    String candProgress = "";
+    
+    if(Integer.parseInt(prog) >= 100)
+    {
+      progress = "100%";
+      candProgress = "Target Achieved for " + candidate;
+    }
+    else
+    {
+      progress = prog + "%";
+      candProgress= prog + "% of Target Achieved to date for " + candidate;    
+    }
     
     Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
 

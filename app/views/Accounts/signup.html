@@ -3,11 +3,11 @@
 #{set activePage:'signup' /} 
 #{include 'nav.html' /}
 
-<section class="ui segment" id="all">
+<section class="ui segment" id="all" >
   <div class="ui text" id="h1">Sign up here ...</div>
 
-  <section class="ui segment" id="mainSeg">
-    <form class="ui form" action="/register" method="POST">
+     <section class="ui segment" id="signUpSeg">
+      <form class="ui form" action="/register" method="POST">
       <div class="two fields">
         <div class="ui input field">
           <input type="text" name="user.firstName" placeholder="First Name">
@@ -38,11 +38,7 @@
       <div class="two fields">
         <div class="ui input field">
           <input type="text" name="user.city" placeholder="City">
-        </div>
-        <div class="ui input field">
-          <input type="text" name="user.zipCode" placeholder="Zip Code">
-        </div>
-      </div>
+        </div>      
       <div class="ui input field">
         <select class="ui dropdown" name="user.state">
           <option value="">Select a State</option>
@@ -99,27 +95,53 @@
           <option value="Wyoming">Wyoming</option>
         </select>
       </div>
-      <div class="ui divider"></div>
-      <div class="ui two fields">
-        <div class="ui input field">
-          <input type="text" name="user.age" placeholder="Age">
-        </div>
       </div>
       <div class="ui divider"></div>
-      <div class="inline field">
+      <div class="grouped inline fields">
+      
+      
+      <div class="three wide column">
+      <div class="ui input field">
+          <input type="text" id="zipCode" name="user.zipCode" placeholder="Zip Code" value="">
+          </div>
+          </div>
+          <div class="four wide column">
+          <div class="ui green button" onclick="codeAddress()">Get Geocode</div>
+           </div>
+           <div class="six  wide column">
+            
+              <input id="latitude" type="text" name="latitude" value="" placeholder="Latitude">
+              
+              <input id="longitude" type="text" name="longitude" value="" placeholder="Longitude">
+    
+    </div>
+</div>
+
+      <div class="ui divider"></div>
+      <div class="ui inline input field">
+    
+    <div class="ui large pointing right red label">
+      You must be 18 or over to register
+    </div>
+    <input type="text" name="user.age" placeholder="Age">
+  </div>
+    <div class="ui divider"></div>
+    
         <div class="ui checkbox">
-          <input name="user.usaCitizen" type="checkbox"> <label
-            for="conditions"> Tick to confirm you are a citizen of the
-            USA</label>
+          <input name="user.usaCitizen" type="checkbox"> <label for="conditions"> 
+            Tick to confirm you are a citizen of the USA</label>
         </div>
-      </div>
-      <div class="ui green submit button">
+
+      <button class="ui green submit button">
         <i class="save icon"></i> Submit
-      </div>
+      </button>
       <div class="ui error message"></div>
+
     </form>
   </section>
-</section>
+</section>  
 
 <script src="@{'/public/javascripts/signup.js'}" type="text/javascript"
   charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/input.js'}" type="text/javascript"
+  charset="${_response_encoding}"></script> 

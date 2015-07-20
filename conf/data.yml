@@ -19,7 +19,7 @@ Candidate(Celery):
     email: celery@clinton.com
     password: secret
     running: office1
-    donationTarget: 20000
+    donationTarget: 2000
 
 Candidate(Homer): 
     firstName: Homer

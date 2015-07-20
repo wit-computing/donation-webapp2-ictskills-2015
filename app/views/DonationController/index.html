@@ -23,7 +23,7 @@
                 <td>
                   <select class="ui dropdown" name="email"> 
                     #{list items:candidates, as:'candidate'}
-                      <option value="">Select a Candidate</option>
+                      <option value="">Select Candidate</option>
                       <option value="${candidate.email}">${candidate}</option> 
                     #{/list}
                   </select>
@@ -70,21 +70,27 @@
             </tbody>
           </table>
         </form>
-      </div>
-       <img src="/public/images/MoneyHomer.jpg" id="donateImg">
-    </div>
-
+  </div>
+  <div class="ten wide column">
+    <div class="ui raised fluid segment">
+            <div id="map_canvas"></div>
+              <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+              <script src="@{'/public/javascripts/map.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+            </div>
+              </div>
+              </div>
+           
    <div class="ui segment" id="progressSeg">
-      <div  class="ui indicating progress" id="progress">
-        <div style="transition-duration: 300ms; width: ${progress};" class="bar">
+      <div class="ui indicating progress" id="progress">
+        <div style="width:${progress};" class="bar">
         <div class="progress"></div>
       </div>
       <div class="label" id="progressLabel">${candProgress}</div>
     </div>
     </div>
+    
   </section>
 </section>
 
 <script src="@{'/public/javascripts/donate.js'}"></script>
-
 <script>$('#progress').progress('increment', '${progress}');</script>

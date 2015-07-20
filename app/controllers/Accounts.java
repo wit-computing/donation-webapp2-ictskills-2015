@@ -20,14 +20,26 @@ public class Accounts extends Controller
     render();
   }
 
-  public static void register(User user)
+  public static void register(User user, double latitude, double longitude)
   {
+    GeoLocation location = new GeoLocation(latitude, longitude);
+    location.save();
+    user.located = location;
     user.save();
     login();
   }
 
   public static void login()
   {
+    List<User> users = User.findAll();
+    for (User user:users) {
+      if (user.located!=null) {
+        Logger.info(user.toString());
+        Logger.info("lat:"+user.located.getLat());
+        Logger.info("long:"+user.located.getLong());
+        Logger.info("");
+      }
+    }
     render();
   }
 
