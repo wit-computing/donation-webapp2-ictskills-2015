@@ -26,7 +26,7 @@ GET 		/index																	CandidateController.index
 
 POST		/newCandidate														CandidateController.newCandidate
 
-#Office
+# Office
 GET			/index																	OfficeController.index
 
 POST		/newOffice															OfficeController.newOffice	
@@ -37,7 +37,9 @@ GET			/edit																		EditDetails.index
 POST		/changeDetails													EditDetails.changeDetails
 
 # Donation
+GET		 /donationController/geolocations				DonationController.userLocation
 GET 	 /donation																DonationController.index
+
 
 POST	 /donation/donate 												DonationController.donate
 

@@ -2,10 +2,12 @@ package controllers;
 
 import java.util.*;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import models.Candidate;
 import models.Donation;
+import models.GeoLocation;
 import models.User;
 import play.*;
 import play.mvc.*;
@@ -98,4 +100,25 @@ public class DonationController extends Controller
 
     return progress;
   }
+  
+  public static void userLocation()
+  {
+    List<User> users = User.findAll();
+    List<Donation> allDonations = Donation.findAll();
+    
+    JSONArray list = new JSONArray();
+     
+    for (User user : users)
+    {
+      for (Donation don : allDonations)
+      {
+        if (don.from == user)
+        { 
+          list.add(Arrays.asList(user.toString(), user.located.getLat(), user.located.getLong()));
+        }
+      }
+    } 
+    renderJSON(list);
+  }
 }
+

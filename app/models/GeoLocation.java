@@ -37,7 +37,7 @@ public class GeoLocation extends Model
   @Override
   public String toString()
   {
-    return "GeoLocation [latlng=" + latlng + ", lat=" + lat + ", lng=" + lng
-        + "]";
-  }  
+    return lat + ", " + lng;
+  }
+
 }

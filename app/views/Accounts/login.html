@@ -6,13 +6,18 @@
 <section class="ui segment" id="all">
   <div class="ui text" id="h1">Log in here...</div>
 
-  <section class="ui segment" id="mainSeg">
+  <section class="ui segment" id="signupEditSeg">
     <form class="ui form" action="/authenticate" method="POST">
+    <div class="ui two column grid">
+      <div class="ui ten wide column">
       <div class="ui left icon input field">
         <input type="text" name="email" placeholder="Email"> <i class="user icon"></i>
-      </div>
+      </div>    
       <div class="ui left icon input field">
         <input type="password" name="password" placeholder="Password"> <i class="lock icon"></i>
+      </div>
+      </div>
+      <div class="ui column"></div>
       </div>
       <button type="submit" class="ui green button ">
         <i class="save icon"></i>Submit

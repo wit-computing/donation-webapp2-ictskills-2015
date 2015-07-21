@@ -2,6 +2,7 @@ package controllers;
 
 import java.util.Date;
 
+import models.GeoLocation;
 import models.User;
 import play.*;
 import play.mvc.*;
@@ -22,7 +23,7 @@ public class EditDetails extends Controller
   }
 
   public static void changeDetails(String firstName, String lastName, Integer age, String address1, String address2, 
-      String city, String state, String zipCode)
+      String city, String state, String zipCode, double latitude, double longitude)
   {
     User user = Accounts.getCurrentUser();
 
@@ -34,7 +35,11 @@ public class EditDetails extends Controller
     user.city = city;
     user.state = state;
     user.zipCode = zipCode;
-
+    
+    GeoLocation location = new GeoLocation(latitude, longitude);
+    location.save();
+    user.located = location;
+    
     user.save();
     DonationController.index();
   }

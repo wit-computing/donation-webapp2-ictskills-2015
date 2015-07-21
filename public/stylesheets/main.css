@@ -27,8 +27,8 @@ body {
   background: #eeeeee;
 }
 
-#signUpSeg {
-  width: 64%;
+#signupEditSeg {
+  width: 68%;
   float: left;
   padding: 3%;
   background: #eeeeee;
@@ -88,6 +88,12 @@ body {
   width: 62%;
   padding: 1%;
   float: right;
+}
+
+#googleMap
+{
+  width: 100%;
+  height: 400px;
 }
 
 #reportSeg

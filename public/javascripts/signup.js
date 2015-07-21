@@ -81,10 +81,24 @@ $('.ui.form')
 		        }]
 	},
 	'user.usaCitizen': {
-		identifier : 'usaCitizen',
+		identifier : 'user.usaCitizen',
 		rules: [{
 		        	type   : 'checked',
 		        	prompt : 'You must agree to the terms and conditions'
 		        }]
+	},
+	'longitude': {
+		identifier : 'longitude',
+		rules: [{
+					type : 'empty',
+					prompt: ''
+			  }]
+	},
+	'latitude': {
+		identifier : 'latitude',
+		rules: [{
+					type : 'empty',
+					prompt: 'Please get your GeoCode'
+			  }]
 	}
 });

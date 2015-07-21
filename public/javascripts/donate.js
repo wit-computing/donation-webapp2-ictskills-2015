@@ -1,9 +1,6 @@
 $('.dropdown')
 .dropdown();
 
-$('.checkbox')
-.checkbox();
-
 $('.form')
 .form({
 	amoundDonated : {

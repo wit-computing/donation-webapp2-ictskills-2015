@@ -12,7 +12,27 @@ Office(office2):
     title: Vice-President
     description: The Office of The Vice-President of The United States of America
     candidate: [Abamo, Harry]
+
+GeoLocation(location1):
+    latlng: 39.762633,-89.640271
+    lat: 39.762633
+    lng: -89.640271
     
+GeoLocation(location2):
+    latlng: 37.175091,-93.231635
+    lat: 37.175091
+    lng: -93.231635
+
+GeoLocation(location3):
+    latlng: 39.913901,-83.811203
+    lat: 39.913901
+    lng: -83.811203
+    
+GeoLocation(location4):
+    latlng: 37.683678,-85.217223
+    lat: 37.683678
+    lng: -85.217223
+        
 Candidate(Celery):
     firstName: Celery
     lastName: Clinton
@@ -58,6 +78,7 @@ User(Marge):
     city: Springfield
     state: Illinois
     zipCode: IL03345
+    located: location1
 
 User(Bart):
     firstName: Bart
@@ -72,7 +93,8 @@ User(Bart):
     city: Denver
     state: Colorado
     zipCode: CO03345
-
+    located: location2
+    
 User(Lisa):
     firstName: Lisa
     lastName: Simpson
@@ -86,7 +108,8 @@ User(Lisa):
     city: Springfield
     state: Alabama
     zipCode: AL03345
-
+    located: location3
+    
 User(Maggie):
     firstName: Maggie
     lastName: Simpson
@@ -100,6 +123,7 @@ User(Maggie):
     city: Springfield
     state: Illinois
     zipCode: IL03345
+    located: location4
          
 Donation(donation1):
     methodDonated: paypal

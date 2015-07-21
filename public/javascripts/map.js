@@ -1,117 +1,114 @@
+var map; // the google map
+var latlng = []; // geolocation data later retrieved from server in func callback
+var markers = []; // array of all markers (unfiltered)
 
+/**
+ * Render the basic google map
+ */
 function initialize() {
-    var map;
-    var marker;
-    var latlng = new google.maps.LatLng();
-
-    var mapOptions = {
-        zoom : 4,
-        center : new google.maps.LatLng(35, -97),
-        mapTypeId : google.maps.MapTypeId.ROADMAP
-    };
-    var mapDiv = document.getElementById('map_canvas');
-    map = new google.maps.Map(mapDiv,mapOptions);
-    mapDiv.style.width = '100%';
-    mapDiv.style.height = '400px';
-    // place a marker
-        marker = new google.maps.Marker({
-        map : map,
-        draggable : true,
-        position : latlng,
-        title : ""
-    });
-    // To add the marker to the map, call setMap();
-    marker.setMap(map); 
-    //marker listener populates hidden fields ondragend
-    google.maps.event.addListener(marker, 'dragend', function() {
-        var latLng = marker.getPosition();
-        var latlong = latLng.lat().toString().substring(0,10) + ',' + latLng.lng().toString().substring(0,10);
-        //publish lat long in geolocation control in html page
-        $("#geolocation").val(latlong);
-        //update the new marker position
-        map.setCenter(latLng);
-      });
+  rendermap();
+  retrieveMarkerLocations();
 }
-google.maps.event.addDomListener(window, 'load', initialize);
-google.maps.event.addListener(map, 'idle', showMarkers);
 
-/*function initialize() {
-    var map;
-    var marker;
-    var latlng = new google.maps.LatLng(53.347298, -6.268344);
-
-    var mapOptions = {
-        zoom : 8,
-        center : new google.maps.LatLng(53.347298,-6.268344),
-        mapTypeId : google.maps.MapTypeId.ROADMAP
-    };
-    var mapDiv = document.getElementById('map_canvas');
-    map = new google.maps.Map(mapDiv,mapOptions);
-    mapDiv.style.width = '500px';
-    mapDiv.style.height = '400px';
-    // place a marker
-        marker = new google.maps.Marker({
-        map : map,
-        draggable : true,
-        position : latlng,
-        title : "Drag and drop on your property!"
-    });
-    // To add the marker to the map, call setMap();
-    marker.setMap(map); 
-    //marker listener populates hidden fields ondragend
-    google.maps.event.addListener(marker, 'dragend', function() {
-        var latLng = marker.getPosition();
-        var latlong = latLng.lat().toString().substring(0,10) + ',' + latLng.lng().toString().substring(0,10);
-        //publish lat long in geolocation control in html page
-        $("#geolocation").val(latlong);
-        //update the new marker position
-        map.setCenter(latLng);
-      });
+/**
+ * The basic map, no markers, no centre specified
+ * Canvas id on html is 'googleMap'
+ */
+function rendermap() {
+  var mapProp = {
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+    
+  };
+  //map = new google.maps.Map(document.getElementById("googleMap"), mapProp); // using vanilla js
+  map = new google.maps.Map($("#googleMap")[0], mapProp); // using jQuery
 }
-google.maps.event.addDomListener(window, 'load', initialize);*/
- 
-/*function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
+
+/**
+ * Use ajax call to get users and their geolocations
+ * pass returned array marker locations to callback method
+ * Here is the format in which marker data stored
+ * geoObj[0] is descripion.             
+ * geoObj[1] is latitude                              
+ * geoObj[2] is longitude  
+ * We use geoObj[0] in the infoWindow. Click marker to reveal description.
+ */
+function retrieveMarkerLocations()
+{
+  $(function() {
+    $.get("/donationController/userLocation", function(data) {
+      $.each(data, function(index, geoObj) {
+        console.log(geoObj[0] + " " + geoObj[1] + " " + geoObj[2]);
+    });
+      callback(data);
+    });
+  });
+}
+
+/**
+ * we've got the marker location from data in ajax call
+ * we now put data into an array
+ * the format is 'firstName, xx.xxxx, yy.yyyyy' -> (firstName, lat, lng)
+ * then invoke 'fitBounds' to render the markers, centre map and create infoWindow to display firstName
+ */
+function callback(data)
+{
+
+  latlng = data; // store the array of data in a global for later use
+  fitBounds(latlng); // then invoke fitBounds to zoom and display markers within view
+  setInfoWindowListener(latlng);
+}
+
+/**
+ * creates and positions markers
+ * sets zoom so that all markers visible
+ */
+function fitBounds(latlngStr)
+{
+  var bounds = new google.maps.LatLngBounds();
+    for (i = 0; i < latlngStr.length; i++) 
+    {
+        marker = new google.maps.Marker({
+            position: getLatLng(latlngStr[i]),
+            map: map
+        });
+        markers[i] = marker;      
+        bounds.extend(marker.position);
+    }
+    map.fitBounds(bounds);
+}
+
+function setInfoWindowListener(latlngStr)
+{
+    var infowindow = new google.maps.InfoWindow();
+    for (i = 0; i < latlng.length; i++) 
+    {
+      /*respond to click on marker by displaying infowindow text*/
+      var marker = markers[i];
+      google.maps.event.addListener(marker, 'click', (function (marker, i) {
+          return function () {
+            infowindow.setContent(latlngStr[i][0]);
+            infowindow.open(map, marker);
+          }
+      })(marker, i));
     }
 }
-function initialize()
-{
-	
-    var center =new google.maps.LatLng(53.347298,-6.268344);
-    var initRadius = 10000;
-    var mapProp = {
-            center:center,
-            zoom:7,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-    };
-    var mapDiv = document.getElementById("map_canvas");
-    var map = new google.maps.Map(mapDiv,mapProp);
-    mapDiv.style.width = '500px';
-    mapDiv.style.height = '400px';
-    
-    //postion
-    var latlon = position.coords.latitude + "," + position.coords.longitude;
-    
-    
-    */
-   /* function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
-    }*/
-        /*circle = new google.maps.Circle({
-        center:center,
-        radius:initRadius,
-        strokeColor:"#0000FF",
-        strokeOpacity:0.4,
-        strokeWeight:1,
-        fillColor:"#0000FF",
-        fillOpacity:0.4,
-        draggable: true
-        });
-    circle.setEditable(true);//allows varying radius be dragging anchor point
-    circle.setMap(map);*/
-/*}
-google.maps.event.addDomListener(window, 'load', initialize);*/
+/**
+ * A helper function to convert the latlng string to individual numbers
+ * and thence to a google.maps.LatLng object
+ * @param str str is list of strings : username, lat, lon    
+ * str[0] is description                
+ * str[1] is latitude                              
+ * str[2] is longitude                             
+ * 
+ * @param The object 'str' holding an individual marker data set
+ * @return A google.maps.LatLng object containing the marker coordinates.
+ */
+function getLatLng(str)
+{ 
+
+  var lat = Number(str[1]);
+  var lon = Number(str[2]);
+  return new google.maps.LatLng(lat, lon);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);

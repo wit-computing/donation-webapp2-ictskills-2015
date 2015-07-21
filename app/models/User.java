@@ -40,16 +40,6 @@ public class User extends Model
   {
     return this.password.equals(password);
   }
-
-//  @Override
-//  public String toString()
-//  {
-//    return "User [usaCitizen=" + usaCitizen + ", age=" + age + ", firstName="
-//        + firstName + ", lastName=" + lastName + ", email=" + email
-//        + ", password=" + password + ", address1=" + address1 + ", address2="
-//        + address2 + ", city=" + city + ", state=" + state + ", zipCode="
-//        + zipCode + ", located=" + located + ", donations=" + donations + "]";
-//  }
   
   public String toString()
   {

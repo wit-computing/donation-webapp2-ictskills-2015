@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -31,16 +32,7 @@ public class Accounts extends Controller
 
   public static void login()
   {
-    List<User> users = User.findAll();
-    for (User user:users) {
-      if (user.located!=null) {
-        Logger.info(user.toString());
-        Logger.info("lat:"+user.located.getLat());
-        Logger.info("long:"+user.located.getLong());
-        Logger.info("");
-      }
-    }
-    render();
+     render();
   }
 
   public static void logout()
@@ -87,4 +79,5 @@ public class Accounts extends Controller
     }
     return user;
   }
+
 }

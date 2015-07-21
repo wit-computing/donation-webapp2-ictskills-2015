@@ -20,38 +20,35 @@
             </thead>
             <tbody>
               <tr>
-                <td>
-                  <select class="ui dropdown" name="email"> 
+                <td><select class="ui dropdown" name="email">
                     #{list items:candidates, as:'candidate'}
-                      <option value="">Select Candidate</option>
-                      <option value="${candidate.email}">${candidate}</option> 
+                    <option value="">Select Candidate</option>
+                    <option value="${candidate.email}">${candidate}</option>
                     #{/list}
-                  </select>
-                  </td>
-                  </tr>
-                  <tr>
-                  <td>
-                  <select class="ui dropdown" name="amountDonated">
+                </select></td>
+              </tr>
+              <tr>
+                <td><select class="ui dropdown" name="amountDonated">
                     <option value="">Select Amount</option>
                     <option value="100">$100</option>
                     <option value="500">$500</option>
                     <option value="1000">$1000</option>
-                </select>
-                </td>
+                </select></td>
               </tr>
               <tr>
                 <td>
                   <div class="grouped inline fields">
                     <div class="field">
                       <div class="ui radio checkbox">
-                        <input id="paypal" name="methodDonated" value="paypal" checked="checked"
-                          type="radio"> <label for="paypal">PayPal</label>
+                        <input id="paypal" name="methodDonated" value="paypal"
+                          checked="checked" type="radio"> <label
+                          for="paypal">PayPal</label>
                       </div>
                     </div>
                     <div class="field">
                       <div class="ui radio checkbox">
-                        <input id="direct" name="methodDonated" value="direct" type="radio">
-                        <label for="direct">Direct</label>
+                        <input id="direct" name="methodDonated" value="direct"
+                          type="radio"> <label for="direct">Direct</label>
                       </div>
                     </div>
                   </div>
@@ -70,25 +67,23 @@
             </tbody>
           </table>
         </form>
-  </div>
-  <div class="ten wide column">
-    <div class="ui raised fluid segment">
-            <div id="map_canvas"></div>
-              <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-              <script src="@{'/public/javascripts/map.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-            </div>
-              </div>
-              </div>
-           
-   <div class="ui segment" id="progressSeg">
-      <div class="ui indicating progress" id="progress">
-        <div style="width:${progress};" class="bar">
-        <div class="progress"></div>
       </div>
-      <div class="label" id="progressLabel">${candProgress}</div>
+      <div class="ten wide column">
+        <div class="ui raised fluid segment">
+          <div id="googleMap"></div>
+          <script src="https://maps.googleapis.com/maps/api/js"></script>
+          <script src="@{'/public/javascripts/map.js'}"></script>
+        </div>
+      </div>
     </div>
+    <div class="ui segment" id="progressSeg">
+      <div class="ui indicating progress" id="progress">
+        <div style="width: ${progress}" class="bar">
+          <div class="progress"></div>
+        </div>
+        <div class="label" id="progressLabel">${candProgress}</div>
+      </div>
     </div>
-    
   </section>
 </section>
 
