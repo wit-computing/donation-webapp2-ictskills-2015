@@ -14,14 +14,14 @@ Office(office2):
     candidate: [Abamo, Harry]
 
 GeoLocation(location1):
-    latlng: 39.762013,-89.638717
-    lat: 39.762013
-    lng: -89.638717
+    latlng: 43.081296,-112.681818
+    lat: 43.081296
+    lng: -112.681818
     
 GeoLocation(location2):
-    latlng: 37.174702,-93.232284
-    lat: 37.174702
-    lng: -93.232284
+    latlng: 37.406624,-102.619355
+    lat: 37.406624
+    lng: -102.619355
 
 GeoLocation(location3):
     latlng: 39.913132,-83.810709
@@ -73,11 +73,11 @@ User(Marge):
     email: marge@simpson.com
     password: secret
     usaCitizen: True
-    address1: 2907
-    address2: South 12th Street
+    address1: 1931
+    address2: W 800 St
     city: Springfield
-    state: Illinois
-    zipCode: 62703
+    state: Idaho
+    zipCode: 83277
     located: location1
 
 User(Bart):
@@ -88,11 +88,11 @@ User(Bart):
     email: bart@simpson.com
     password: secret
     usaCitizen: True
-    address1: South_Catalina_Ave
-    address2: [South, Catalina, Ave]
-    city: 
-    state: Missouri
-    zipCode: 65804
+    address1: 717 
+    address2: Tipton St
+    city: Springfield
+    state: Colorado
+    zipCode: 81073
     located: location2
     
 User(Lisa):

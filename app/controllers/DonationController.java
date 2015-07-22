@@ -36,33 +36,36 @@ public class DonationController extends Controller
   }
 
 
-  public static void donate(long amountDonated, String methodDonated, String email)
+  public static void donate(long amountDonated, String methodDonated, String candidateEmail)
   {
     User user = Accounts.getCurrentUser();
-    List<Candidate> candidates = Candidate.findAll();
-    Candidate candidate = Candidate.findByEmail(email);
+    Candidate candidate = Candidate.findByEmail(candidateEmail);
       
     addDonation(user, candidate, amountDonated, methodDonated);
     
-    String prog = getPercentTargetAchieved(candidate);
-    
     String progress = "";
-    String candProgress = "";
+    String prog = getPercentTargetAchieved(candidate);
+    String candidate2 = candidate.toString();
+    String progressLabel = "";
     
     if(Integer.parseInt(prog) >= 100)
     {
       progress = "100%";
-      candProgress = "Target Achieved for " + candidate;
+      progressLabel = "Target Achieved for " + candidate;
     }
     else
     {
       progress = prog + "%";
-      candProgress= prog + "% of Target Achieved to date for " + candidate;    
+      progressLabel = prog + "% of Target Achieved to date for " + candidate;    
     }
     
     Logger.info("amount donated " + amountDonated + " " + "method donated " + methodDonated);
-
-    renderTemplate("DonationController/index.html", user, candidates, progress, candProgress);
+    
+    JSONObject obj = new JSONObject();
+    obj.put("progress", progress);
+    obj.put("candidate2", candidate2);
+    obj.put("progressLabel", progressLabel);
+    renderJSON(obj);
   }
 
   private static void addDonation(User user, Candidate candidate, long amountDonated, String methodDonated)
@@ -104,19 +107,12 @@ public class DonationController extends Controller
   public static void userLocation()
   {
     List<User> users = User.findAll();
-    List<Donation> allDonations = Donation.findAll();
     
     JSONArray list = new JSONArray();
      
     for (User user : users)
     {
-      for (Donation don : allDonations)
-      {
-        if (don.from == user)
-        { 
-          list.add(Arrays.asList(user.toString(), user.located.getLat(), user.located.getLong()));
-        }
-      }
+      list.add(Arrays.asList(user.toString(), user.located.getLat(), user.located.getLong()));
     } 
     renderJSON(list);
   }

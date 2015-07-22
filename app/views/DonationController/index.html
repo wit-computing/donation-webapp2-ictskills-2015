@@ -5,13 +5,13 @@
 
 <section class="ui segment" id="all">
   <div class="ui text" id="h1">Welcome ${user.firstName}</div>
-  <div class="ui hidden divider"></div>
   <div class="ui text" id="h3">Please give generously</div>
 
   <section class="ui segment" id="donateSeg">
     <div class="ui grid">
+
       <div class="six wide column">
-        <form class="ui form" action="/DonationController/donate" method="POST">
+        <form class="ui form">
           <table class="ui table">
             <thead>
               <tr>
@@ -20,20 +20,32 @@
             </thead>
             <tbody>
               <tr>
-                <td><select class="ui dropdown" name="email">
-                    #{list items:candidates, as:'candidate'}
-                    <option value="">Select Candidate</option>
-                    <option value="${candidate.email}">${candidate}</option>
-                    #{/list}
-                </select></td>
+                <td>
+                  <div class="ui selection dropdown">
+                    <input name="candidateEmail" type="hidden">
+                    <div class="default text">Select Candidate</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                      #{list items:candidates, as:'candidate'}
+                      <div class="item" data-value="${candidate.email}">${candidate}</div>
+                      #{/list}
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr>
-                <td><select class="ui dropdown" name="amountDonated">
-                    <option value="">Select Amount</option>
-                    <option value="100">$100</option>
-                    <option value="500">$500</option>
-                    <option value="1000">$1000</option>
-                </select></td>
+                <td>
+                  <div class="ui selection dropdown">
+                    <input name="amountDonated" type="hidden">
+                    <div class="default text">Select Amount</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                      <div class="item" data-value="100">$100</div>
+                      <div class="item" data-value="500">$500</div>
+                      <div class="item" data-value="1000">$1000</div>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -71,21 +83,22 @@
       <div class="ten wide column">
         <div class="ui raised fluid segment">
           <div id="googleMap"></div>
-          <script src="https://maps.googleapis.com/maps/api/js"></script>
-          <script src="@{'/public/javascripts/map.js'}"></script>
         </div>
       </div>
     </div>
     <div class="ui segment" id="progressSeg">
-      <div class="ui indicating progress" id="progress">
-        <div style="width: ${progress}" class="bar">
-          <div class="progress"></div>
+      <div class="ui segment">
+        <div class="ui indicating progress" id="progress">
+          <div class="bar">
+            <div class="progress"></div>
+          </div>
+          <div class="label" id="progresslabel"></div>
         </div>
-        <div class="label" id="progressLabel">${candProgress}</div>
       </div>
-    </div>
+      </div>
   </section>
 </section>
 
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="@{'/public/javascripts/map.js'}"></script>
 <script src="@{'/public/javascripts/donate.js'}"></script>
-<script>$('#progress').progress('increment', '${progress}');</script>

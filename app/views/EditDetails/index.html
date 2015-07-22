@@ -10,19 +10,19 @@
     <form class="ui form" action="/changeDetails" method="POST">
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="firstName" value=${user.firstName}>
+          <input type="text" name="firstName" value="${user.firstName}">
         </div>
         <div class="ui input field">
-          <input type="text" name="lastName" value=${user.lastName}>
+          <input type="text" name="lastName" value="${user.lastName}">
         </div>
       </div>
       <div class="ui divider"></div>
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="address1" value=${user.address1}>
+          <input type="text" name="address1" value="${user.address1}">
         </div>
         <div class="ui input field">
-          <input type="text" name="address2" value=${user.address2}>
+          <input type="text" name="address2" value="${user.address2}">
         </div>
       </div>
       <div class="two fields">
@@ -98,10 +98,10 @@
         </div>
         <div class="eight wide column">
           <div class="ui input field">
-            <input id="latitude" type="text" name="latitude" value=${user.located.lat} placeholder="Latitude">
+            <input id="latitude" type="text" name="latitude" value="${user.located.lat}">
           </div>
           <div class="ui input field">
-            <input id="longitude" type="text" name="longitude" placeholder="Longitude" value="${user.located.lng}">
+            <input id="longitude" type="text" name="longitude" value="${user.located.lng}">
           </div>
         </div>
       </div>

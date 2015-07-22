@@ -37,7 +37,7 @@ GET			/edit																		EditDetails.index
 POST		/changeDetails													EditDetails.changeDetails
 
 # Donation
-GET		 /donationController/geolocations				DonationController.userLocation
+GET		 /donationController/geolocations					DonationController.userLocation
 GET 	 /donation																DonationController.index
 
 

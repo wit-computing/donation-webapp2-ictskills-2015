@@ -33,7 +33,10 @@ public class EditDetails extends Controller
     user.address1 = address1;
     user.address2 = address2;
     user.city = city;
+    
+    if (!state.isEmpty())
     user.state = state;
+    
     user.zipCode = zipCode;
     
     user.located.lat = latitude;
