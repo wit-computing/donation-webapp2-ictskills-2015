@@ -23,6 +23,7 @@ $('.ui.form')
 {
 	onSuccess : function() {
 	    submitForm();
+	    retrieveMarkerLocations();
 	    return false; // dropdown remains open following press donate button. progress bar fails on return true. why?
 	} 
 });

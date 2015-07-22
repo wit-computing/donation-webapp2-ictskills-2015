@@ -107,13 +107,20 @@ public class DonationController extends Controller
   public static void userLocation()
   {
     List<User> users = User.findAll();
+    List<Donation> allDonations = Donation.findAll();
     
     JSONArray list = new JSONArray();
      
     for (User user : users)
     {
-      list.add(Arrays.asList(user.toString(), user.located.getLat(), user.located.getLong()));
-    } 
+      for (Donation don : allDonations)
+      {
+        if (don.from == user)
+        {
+          list.add(Arrays.asList(user.toString(), user.located.getLat(), user.located.getLong()));
+        }
+      }
+    }
     renderJSON(list);
   }
 }
