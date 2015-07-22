@@ -5,11 +5,16 @@
 
 <section class="ui segment" id="all">
   <div class="ui text" id="h1">Administrator Reports...</div>
-  <div class="ui segment" id="adminReportSeg">
+  <div class="ui segment" id="adminSeg">
 
     <div class="ui two column grid">
-      <div class="column" id="donorRepCol">
-        <div class="ui text" id="h1">Donors</div>
+          <div class="column">
+      <div class="ui three column grid">
+      <div class="column"></div>
+      <div class="column">
+        <div class="ui text " id="h1">Donors</div>
+        </div>
+        </div>
         <div class="ui list">
           <table class="ui table">
             <thead>
@@ -25,20 +30,19 @@
                 <td>${user}</td>
                 <td>${user.state}</td>
                 <td>${user.email}</td>
-                
-                #{if user.located!=null}
-                <td>${user.located.lat}</td>
-                <td>${user.located.lng}</td>
-                #{/if}
-             
               </tr>
             </tbody>
             #{/list}
           </table>
         </div>
       </div>
-      <div class="column" id="candRepCol">
+      <div class="column">
+       <div class="ui three column grid">
+      <div class="column"></div>
+      <div class="column">
         <div class="ui text" id="h1">Candidates</div>
+        </div>
+        </div>
         <div class="ui list">
           <table class="ui table">
             <thead>

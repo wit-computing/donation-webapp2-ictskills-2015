@@ -27,7 +27,7 @@ function rendermap() {
 function retrieveMarkerLocations()
 {
 	$(function() {
-		$.get("/donationController/userLocation", function(data) {
+		$.get("/donationLocation/geolocations", function(data) {
 			$.each(data, function(index, geoObj) {
 				console.log(geoObj[0] + " " + geoObj[1] + " " + geoObj[2]);
 			});

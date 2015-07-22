@@ -101,6 +101,7 @@ body {
   width: 75%;
   padding: 0.5%;
   float: left;
+  background: #eeeeee;
 }
 
 #reportImg
@@ -110,7 +111,7 @@ body {
   float: right;
 }
 
-#adminReportSeg
+#adminSeg
 {
   background: #eeeeee;
 }

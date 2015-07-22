@@ -21,12 +21,17 @@
         #{/if} #{else} 
         <a class="ui item" href="/report"><i class="bar chart icon"></i>Admin Report</a> 
         #{/else}
-         #{if activePage == 'register'} 
+        #{if activePage == 'location'} 
+        <a class="ui active item" href="/donationLocation/index"><i class="map icon"></i>Donation Location</a>
+        #{/if} #{else} 
+        <a class="ui item" href="/donationLocation/index"><i class="map icon"></i>Donation Location</a> 
+        #{/else}
+        #{if activePage == 'register'} 
         <a class="ui active item" href="/candidatecontroller/index"><i class="add user icon"></i>Register Candidate</a>
         #{/if} #{else} 
         <a class="ui item" href="/candidatecontroller/index"><i class="add user icon"></i>Register Candidate</a> 
         #{/else}
-         #{if activePage == 'create'} 
+        #{if activePage == 'create'} 
         <a class="ui active item" href="/officecontroller/index"><i class="building outline icon"></i>Create Office</a>
         #{/if} #{else} 
         <a class="ui item" href="/officecontroller/index"><i class="building outline icon"></i>Create Office</a> 
