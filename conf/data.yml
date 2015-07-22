@@ -14,24 +14,24 @@ Office(office2):
     candidate: [Abamo, Harry]
 
 GeoLocation(location1):
-    latlng: 39.762633,-89.640271
-    lat: 39.762633
-    lng: -89.640271
+    latlng: 39.762013,-89.638717
+    lat: 39.762013
+    lng: -89.638717
     
 GeoLocation(location2):
-    latlng: 37.175091,-93.231635
-    lat: 37.175091
-    lng: -93.231635
+    latlng: 37.174702,-93.232284
+    lat: 37.174702
+    lng: -93.232284
 
 GeoLocation(location3):
-    latlng: 39.913901,-83.811203
-    lat: 39.913901
-    lng: -83.811203
+    latlng: 39.913132,-83.810709
+    lat: 39.913132
+    lng: -83.810709
     
 GeoLocation(location4):
-    latlng: 37.683678,-85.217223
-    lat: 37.683678
-    lng: -85.217223
+    latlng: 37.684130,-85.216187
+    lat: 37.684130
+    lng: -85.216187
         
 Candidate(Celery):
     firstName: Celery
@@ -73,11 +73,11 @@ User(Marge):
     email: marge@simpson.com
     password: secret
     usaCitizen: True
-    address1: 14133 Apartment A
-    address2: Hawthorn Road
+    address1: 2907
+    address2: South 12th Street
     city: Springfield
     state: Illinois
-    zipCode: IL03345
+    zipCode: 62703
     located: location1
 
 User(Bart):
@@ -88,11 +88,11 @@ User(Bart):
     email: bart@simpson.com
     password: secret
     usaCitizen: True
-    address1: 14133 Apartment A
-    address2: Howth Road
-    city: Denver
-    state: Colorado
-    zipCode: CO03345
+    address1: South Catalina Ave
+    address2: [South, Catalina, Ave]
+    city: 
+    state: Missouri
+    zipCode: 65804
     located: location2
     
 User(Lisa):
@@ -103,11 +103,11 @@ User(Lisa):
     email: lisa@simpson.com
     password: secret
     usaCitizen: True
-    address1: 14133 Apartment A
-    address2: Smithfield Road
+    address1: 14 
+    address2: East Euclid Ave
     city: Springfield
-    state: Alabama
-    zipCode: AL03345
+    state: Ohio
+    zipCode: 03345
     located: location3
     
 User(Maggie):
@@ -118,11 +118,11 @@ User(Maggie):
     email: maggie@simpson.com
     password: secret
     usaCitizen: True
-    address1: 14133 Apartment A
-    address2: Hawthorn Road
+    address1: 108 
+    address2: Covington Ave
     city: Springfield
-    state: Illinois
-    zipCode: IL03345
+    state: Kentucky
+    zipCode: 03345
     located: location4
          
 Donation(donation1):

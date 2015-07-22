@@ -36,9 +36,10 @@ public class EditDetails extends Controller
     user.state = state;
     user.zipCode = zipCode;
     
-    GeoLocation location = new GeoLocation(latitude, longitude);
-    location.save();
-    user.located = location;
+    user.located.lat = latitude;
+    user.located.lng = longitude;    
+    
+    user.located.save();
     
     user.save();
     DonationController.index();

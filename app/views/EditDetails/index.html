@@ -19,7 +19,7 @@
       <div class="ui divider"></div>
       <div class="two fields">
         <div class="ui input field">
-          <input type="text" name="address1" value=${user.address1}>
+          <input type="text" name="address1" value=${{user.address1}}>
         </div>
         <div class="ui input field">
           <input type="text" name="address2" value=${user.address2}>
@@ -90,8 +90,7 @@
        <div class="ui grid">
         <div class="four wide column">
           <div class="ui hidden divider"></div>
-          <input type="text" id="zipCode" name="user.zipCode"
-            placeholder="Zip Code" value="">
+          <input type="text" id="zipCode" name="zipCode" value=${user.zipCode}>
         </div>
         <div class="four wide column">
           <div class="ui hidden divider"></div>
@@ -99,19 +98,19 @@
         </div>
         <div class="eight wide column">
           <div class="ui input field">
-            <input id="latitude" type="text" name="latitude" value="" placeholder="Latitude">
+            <input id="latitude" type="text" name="latitude" value=${user.located.lat} placeholder="Latitude">
           </div>
           <div class="ui input field">
-            <input id="longitude" type="text" name="longitude" value="" placeholder="Longitude">
+            <input id="longitude" type="text" name="longitude" placeholder="Longitude" value="${user.located.lng}">
           </div>
         </div>
       </div>
-      
-      <div class="two fields">
+       <div class="ui divider"></div>
+       <div class="three fields">
         <div class="ui input field">
           <input type="text" name="age" value=${user.age}>
         </div>
-      </div>
+        </div>
       <div class="ui divider"></div>
       <div class="ui buttons">
         <button class="ui positive button">Save</button>
@@ -123,5 +122,4 @@
   </section>
 </section>
 <script src="@{'/public/javascripts/editDetails.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-<script src="@{'/public/javascripts/input.js'}" type="text/javascript"
-  charset="${_response_encoding}"></script>
+<script src="@{'/public/javascripts/input.js'}" type="text/javascript" charset="${_response_encoding}"></script>
