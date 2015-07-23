@@ -1,0 +1,73 @@
+#{extends 'main.html' /} 
+#{set title:'Administrator Home' /} 
+#{set activePage:'report' /} 
+#{include 'adminNav.html' /}
+
+<section class="ui segment" id="all">
+  <div class="ui text" id="h1">Administrator Reports...</div>
+  <div class="ui segment" id="adminSeg">
+
+    <div class="ui two column grid">
+          <div class="column">
+      <div class="ui three column grid">
+      <div class="column"></div>
+      <div class="column">
+        <div class="ui text " id="h1">Donors</div>
+        </div>
+        </div>
+        <div class="ui list">
+          <table class="ui table">
+            <thead>
+              <tr>
+                <th class="three wide">Name</th>
+                <th class="three wide">State</th>
+                <th class="two wide">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              #{list items:users, as:'user'}
+              <tr>
+                <td>${user}</td>
+                <td>${user.state}</td>
+                <td>${user.email}</td>
+              </tr>
+            </tbody>
+            #{/list}
+          </table>
+        </div>
+      </div>
+      <div class="column">
+       <div class="ui three column grid">
+      <div class="column"></div>
+      <div class="column">
+        <div class="ui text" id="h1">Candidates</div>
+        </div>
+        </div>
+        <div class="ui list">
+          <table class="ui table">
+            <thead>
+              <tr>
+                <th class="three wide">Name</th>
+                <th class="two wide">Email</th>
+                <th class="two wide">Office</th>
+                <th class="two wide">Target</th>
+              </tr>
+            </thead>
+            <tbody>
+              #{list items:candidates, as:'candidate'}
+              <tr>
+                <td>${candidate}</td>
+                <td>${candidate.email}</td>
+                <td>${candidate.running}</td>
+                <td>${candidate.donationTarget}</td>
+              </tr>
+            </tbody>
+            #{/list}
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+

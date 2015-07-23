@@ -1,0 +1,104 @@
+#{extends 'main.html' /} 
+#{set title:'Donation Request' /} 
+#{set activePage:'donation' /} 
+#{include 'nav.html' /}
+
+<section class="ui segment" id="all">
+  <div class="ui text" id="h1">Welcome ${user.firstName}</div>
+  <div class="ui text" id="h3">Please give generously</div>
+
+  <section class="ui segment" id="donateSeg">
+    <div class="ui grid">
+
+      <div class="six wide column">
+        <form class="ui form">
+          <table class="ui table">
+            <thead>
+              <tr>
+                <th>Make a donation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="ui selection dropdown">
+                    <input name="candidateEmail" type="hidden">
+                    <div class="default text">Select Candidate</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                      #{list items:candidates, as:'candidate'}
+                      <div class="item" data-value="${candidate.email}">${candidate}</div>
+                      #{/list}
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="ui selection dropdown">
+                    <input name="amountDonated" type="hidden">
+                    <div class="default text">Select Amount</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                      <div class="item" data-value="100">$100</div>
+                      <div class="item" data-value="500">$500</div>
+                      <div class="item" data-value="1000">$1000</div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="grouped inline fields">
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input id="paypal" name="methodDonated" value="paypal"
+                          checked="checked" type="radio"> <label
+                          for="paypal">PayPal</label>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input id="direct" name="methodDonated" value="direct"
+                          type="radio"> <label for="direct">Direct</label>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-actions">
+                    <div class="ui green submit button">
+                      <i class="add icon"></i>Donate
+                    </div>
+                    <div class="ui error message"></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div class="ten wide column">
+        <div class="ui raised fluid segment">
+          <div id="googleMap"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ui segment" id="progressSeg">
+      <div class="ui segment">
+        <div class="ui indicating progress" id="progress">
+          <div class="bar">
+            <div class="progress"></div>
+          </div>
+          <div class="label" id="progresslabel"></div>
+        </div>
+      </div>
+      </div>
+  </section>
+</section>
+
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="@{'/public/javascripts/map.js'}"></script>
+<script src="@{'/public/javascripts/donate.js'}"></script>

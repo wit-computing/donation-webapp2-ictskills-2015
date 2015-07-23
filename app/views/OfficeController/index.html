@@ -1,0 +1,26 @@
+#{extends 'main.html' /} 
+#{set title:'Create Office' /} 
+#{set activePage:'create' /} 
+#{include 'adminNav.html' /}
+
+<section class="ui segment" id="all">
+  <div class="ui text" id="h1">Create a new Office here...</div>
+   
+   <section class="ui segment" id="mainSeg">
+    <form class="ui form" action="/newOffice" method="POST">
+      <div class="ui left icon input field">
+        <input type="text" name="office.title" placeholder="Office Title"><i class="building outline icon"></i>
+      </div>
+      <div class="ui left icon input field">
+        <input type="text" name="office.description" placeholder="Office Description"> <i class="info circle icon"></i>
+      </div>
+      <button type="submit" class="ui green button ">
+        <i class="save icon"></i>Submit
+      </button>
+      <div class="ui error message"></div>
+    </form>
+  </section>
+</section>
+
+<script src="@{'/public/javascripts/office.js'}" type="text/javascript"
+  charset="${_response_encoding}"></script>
