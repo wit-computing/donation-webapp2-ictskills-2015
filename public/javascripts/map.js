@@ -19,10 +19,6 @@ function rendermap() {
 /**
  * Use ajax call to get users and their geolocations
  * pass returned array marker locations to callback method
- * Here is the format in which marker data stored
- * geoObj[0] is user.             
- * geoObj[1] is latitude                              
- * geoObj[2] is longitude  
  **/
 function retrieveMarkerLocations()
 {
@@ -85,8 +81,7 @@ function setInfoWindowListener(latlngStr)
 
 /**
  * A helper function to convert the latlng string to individual numbers
- * and thence to a google.maps.LatLng object
- * @param str str is list of strings : username, lat, lon                               
+ * and thence to a google.maps.LatLng object                             
  */
 function getLatLng(str)
 { 
