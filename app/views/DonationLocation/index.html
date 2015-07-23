@@ -5,9 +5,7 @@ activePage:'location' /} #{include 'adminNav.html' /}
   <div class="ui text" id="h1">Donation Locations...</div>
   <div class="ui text">Select area on map to show donor data</div>
 
-  <section class="ui segment" id="adminSeg">
-    <div class="ui two column grid">
-      <div class="ui nine wide column">
+  <section class="ui segment" id="mainSeg">
         <div class="ui raised fluid segment">
           <div id="googleMap"></div>
           <div class="ui hidden divider"></div>
@@ -26,22 +24,6 @@ activePage:'location' /} #{include 'adminNav.html' /}
             </div>
           </div>
         </div>
-      </div>
-      <div class="ui seven wide column">
-        <div class="ui centred text" id="h3">Donors located within search
-          area</div>
-        <table class="ui table segment">
-          <thead>
-            <th class="three wide">Description</th>
-            <th class="three wide">GPS (latitude, longitude)</th>
-          </thead>
-          <tbody id="markertable">
-            <tr>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
   </section>
 
 </section>
