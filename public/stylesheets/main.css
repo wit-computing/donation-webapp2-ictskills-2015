@@ -46,7 +46,6 @@ body {
   font-size: 1.4em;
 }
 
-
 #welcomeText1 {
   padding: 1.4%;
   font-family: "Comic Sans MS", cursive, sans-serif;
@@ -76,42 +75,36 @@ body {
   color: rgba(0, 0, 0, 1);
 }
 
-#donateSeg
-{
+#donateSeg {
   width: 85%;
   padding: 3%;
   background: #eeeeee;
 }
 
-#donateImg
-{
+#donateImg {
   width: 62%;
   padding: 1%;
   float: right;
 }
 
-#googleMap
-{
+#googleMap {
   width: 100%;
   height: 300px;
 }
 
-#reportSeg
-{
+#reportSeg {
   width: 75%;
   padding: 0.5%;
   float: left;
   background: #eeeeee;
 }
 
-#reportImg
-{
+#reportImg {
   width: 24%;
   padding: 2%;
   float: right;
 }
 
-#adminSeg
-{
+#adminSeg {
   background: #eeeeee;
 }

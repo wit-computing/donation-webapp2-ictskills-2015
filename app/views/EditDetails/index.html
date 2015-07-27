@@ -5,7 +5,7 @@
 
 <section class="ui segment" id="all">
   <div class="ui text" id="h1">Change your details here</div>
-  
+
   <section class="ui segment" id="signupEditSeg">
     <form class="ui form" action="/changeDetails" method="POST">
       <div class="two fields">
@@ -87,39 +87,44 @@
         </div>
       </div>
       <div class="ui divider"></div>
-       <div class="ui grid">
+      <!-- Find GeoLocation  -->
+      <div class="ui grid">
         <div class="four wide column">
           <div class="ui hidden divider"></div>
           <input type="text" id="zipCode" name="zipCode" value=${user.zipCode}>
         </div>
         <div class="four wide column">
           <div class="ui hidden divider"></div>
-          <div class="ui fluid green button" onclick="codeAddress()">Get Geocode</div>
+          <div class="ui fluid green button" onclick="codeAddress()">Get GeoCode</div>
         </div>
         <div class="eight wide column">
           <div class="ui input field">
-            <input id="latitude" type="text" name="latitude" value="${user.located.lat}">
+            <input id="latitude" type="text" name="latitude"
+              value="${user.located.lat}">
           </div>
           <div class="ui input field">
-            <input id="longitude" type="text" name="longitude" value="${user.located.lng}">
+            <input id="longitude" type="text" name="longitude"
+              value="${user.located.lng}">
           </div>
         </div>
       </div>
-       <div class="ui divider"></div>
-       <div class="three fields">
+      <div class="ui divider"></div>
+      <div class="three fields">
         <div class="ui input field">
           <input type="text" name="age" value=${user.age}>
         </div>
-        </div>
+      </div>
       <div class="ui divider"></div>
       <div class="ui buttons">
         <button class="ui positive button">Save</button>
         <div class="or"></div>
         <button class="ui negative button" onClick="history.go(-1); return false;">Cancel</button>
       </div>
-       <div class="ui error message"></div>
+      <div class="ui error message"></div>
     </form>
   </section>
+  
 </section>
-<script src="@{'/public/javascripts/editDetails.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-<script src="@{'/public/javascripts/input.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+
+<script src="@{'/public/javascripts/editDetails.js'}"></script>
+<script src="@{'/public/javascripts/input.js'}"></script>

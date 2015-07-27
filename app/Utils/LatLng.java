@@ -6,12 +6,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
 public class LatLng
 {
   public double latitude;
   public double longitude;
-  
+
   public LatLng(double latitude, double longitude)
   {
     this.latitude = latitude;
@@ -21,12 +20,13 @@ public class LatLng
   public static LatLng toLatLng(String latlng)
   {
     String[] latLng = latlng.split(",");
-    return new LatLng(Double.parseDouble(latLng[0]), Double.parseDouble(latLng[1]));
+    return new LatLng(Double.parseDouble(latLng[0]),
+        Double.parseDouble(latLng[1]));
   }
-  
+
   public static String fromLatLng(double latitude, double longitude)
   {
-    return ""+latitude+","+longitude;
+    return "" + latitude + "," + longitude;
   }
 
   public double getLatitude()

@@ -3,26 +3,26 @@
 # ~~~~
 
 # Home page
-GET     /			                              		Welcome.index
+GET			/																				Welcome.index
 GET			/index																	Welcome.index
 
 # Accounts
 GET			/signup																	Accounts.signup
-GET 		/login																	Accounts.login
-GET 		/logout																	Accounts.logout
+GET			/login																	Accounts.login
+GET			/logout																	Accounts.logout
 
-POST		/authenticate 													Accounts.authenticate
-POST    /register																Accounts.register
+POST		/authenticate														Accounts.authenticate
+POST		/register																Accounts.register
 
 # Administrator
 GET			/login																	Administrator.login
-GET 		/logout																	Administrator.logout
-GET     /report																	Administrator.report
+GET			/logout																	Administrator.logout
+GET			/report																	Administrator.report
 
 POST		/authenticate														Administrator.authenticate
 
 # Candidate
-GET 		/index																	CandidateController.index
+GET			/index																	CandidateController.index
 
 POST		/newCandidate														CandidateController.newCandidate
 
@@ -37,25 +37,25 @@ GET			/edit																		EditDetails.index
 POST		/changeDetails													EditDetails.changeDetails
 
 # Donation
-GET 	 /donation																DonationController.index
+GET			/donation																DonationController.index
 
-POST	 /donation/donate 												DonationController.donate
+POST		/donation/donate												DonationController.donate
 
 # Location
-GET		 /donationLocation/geolocations						DonationLocation.donationLocations
+GET			/donationLocation/geolocations					DonationLocation.donationLocations
 
 #Report
-GET		 /report																	ReportController.index
+GET			/report																	ReportController.index
 
-POST 	 /filterCandidate													ReportController.filterCandidate
-POST 	 /filterDonor															ReportController.filterDonor
-POST 	 /filterState															ReportController.filterState
+POST		/filterCandidate												ReportController.filterCandidate
+POST		/filterDonor														ReportController.filterDonor
+POST		/filterState														ReportController.filterState
 
 # Ignore favicon requests
-GET     /favicon.ico                            404
+GET			/favicon.ico                            404
 
 # Map static resources from the /app/public folder to the /public path
-GET     /public/                                staticDir:public
+GET			/public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

@@ -15,17 +15,23 @@ public class CandidateController extends Controller
   @Before
   static void checkAuthentification()
   {
-    if(session.contains("logged_in_adminid") == false)
+    if (session.contains("logged_in_adminid") == false)
       Administrator.login();
   }
-  
+
+  /*
+   * Render new candidate page
+   */
   public static void index()
   {
     Admin admin = Administrator.getCurrentAdmin();
     List<Office> offices = Office.findAll();
     render(admin, offices);
   }
-  
+
+  /*
+   * Save new candidate and relevant office
+   */
   public static void newCandidate(Candidate candidate, String title)
   {
     Office running = Office.findByTitle(title);

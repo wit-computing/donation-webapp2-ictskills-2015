@@ -9,7 +9,7 @@ import play.*;
 import play.mvc.*;
 
 public class Administrator extends Controller
-{  
+{
   public static void index()
   {
     render();
@@ -25,20 +25,21 @@ public class Administrator extends Controller
     setSessionLogout();
     Welcome.index();
   }
-  
+
   protected static void setSessionLogout()
   {
-    if (session.get("logged_status") != null && session.get("logged_status").equals("logged_in"))
+    if (session.get("logged_status") != null
+        && session.get("logged_status").equals("logged_in"))
     {
       session.clear();
       session.put("logged_status", "logged_out");
     }
   }
-  
+
   public static void authenticate(String userName, String password)
   {
     Admin admin = Admin.findByUserName(userName);
-    
+
     if ((admin != null) && (admin.checkPassword(password) == true))
     {
       session.put("logged_in_adminid", admin.id);
@@ -52,7 +53,7 @@ public class Administrator extends Controller
       login();
     }
   }
-  
+
   public static Admin getCurrentAdmin()
   {
     Admin admin = null;
@@ -63,7 +64,10 @@ public class Administrator extends Controller
     }
     return admin;
   }
-  
+
+  /*
+   * Enables Admin Report Page to render with users and candidates
+   */
   public static void report()
   {
     Admin admin = getCurrentAdmin();

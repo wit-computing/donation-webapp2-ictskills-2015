@@ -1,6 +1,5 @@
 package models;
 
-
 import java.util.*;
 
 import javax.persistence.*;
@@ -12,10 +11,10 @@ public class User extends Model
 {
   public boolean usaCitizen;
   public Integer age;
- 
-  public String	firstName;
-  public String	lastName;
- 
+
+  public String firstName;
+  public String lastName;
+
   public String email;
   public String password;
 
@@ -24,10 +23,10 @@ public class User extends Model
   public String city;
   public String state;
   public String zipCode;
-  
+
   @OneToOne
   public GeoLocation located;
-  
+
   @OneToMany(mappedBy = "from", cascade = CascadeType.ALL)
   List<Donation> donations = new ArrayList<Donation>();
 
@@ -40,9 +39,9 @@ public class User extends Model
   {
     return this.password.equals(password);
   }
-  
+
   public String toString()
   {
     return firstName + " " + lastName;
-  }  
+  }
 }

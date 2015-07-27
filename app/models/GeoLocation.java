@@ -19,17 +19,19 @@ public class GeoLocation extends Model
   public GeoLocation(double latitude, double longitude)
   {
     this.latlng = LatLng.fromLatLng(latitude, longitude);
-    Logger.info("long "+longitude+ " lat"+latitude);
-    this.lat=latitude;
-    this.lng=longitude;
+    Logger.info("long " + longitude + " lat" + latitude);
+    this.lat = latitude;
+    this.lng = longitude;
   }
-  
-  public double getLat() {
+
+  public double getLat()
+  {
     LatLng tmp = LatLng.toLatLng(latlng);
     return tmp.latitude;
   }
 
-  public double getLong() {
+  public double getLong()
+  {
     LatLng tmp = LatLng.toLatLng(latlng);
     return tmp.longitude;
   }

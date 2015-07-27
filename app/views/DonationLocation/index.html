@@ -1,5 +1,7 @@
-#{extends 'main.html' /} #{set title:'Donation Location' /} #{set
-activePage:'location' /} #{include 'adminNav.html' /}
+#{extends 'main.html' /} 
+#{set title:'Donation Location' /} 
+#{set activePage:'location' /} 
+#{include 'adminNav.html' /}
 
 <section class="ui segment" id="all">
   <div class="ui text" id="h1">Donation Locations...</div>
@@ -8,10 +10,12 @@ activePage:'location' /} #{include 'adminNav.html' /}
   <section class="ui segment" id="adminSeg">
     <div class="ui two column grid">
       <div class="ui nine wide column">
+      <!-- Google Map -->
         <div class="ui raised fluid segment">
           <div id="googleMap"></div>
           <div class="ui hidden divider"></div>
           <div class="ui four column grid">
+          <!-- Buttons -->
             <div class="ui column">
               <div class="ui fluid green submit button" onClick="start()">Start</div>
             </div>
@@ -21,12 +25,15 @@ activePage:'location' /} #{include 'adminNav.html' /}
             <div class="ui column">
               <div class="ui fluid green submit button" onClick="filter()">Filter</div>
             </div>
+            <div class="ui column">
+              <div class="ui fluid green submit button" onClick="reset()">Reset</div>
+            </div>
           </div>
         </div>
       </div>
+      <!-- Donor Table -->
       <div class="ui seven wide column">
-        <div class="ui centred text" id="h3">Donors located within search
-          area</div>
+        <div class="ui centred text" id="h3">Donors located within search area</div>
         <table class="ui table segment">
           <thead>
             <th class="three wide">Description</th>

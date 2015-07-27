@@ -1,11 +1,11 @@
 #{extends 'main.html' /} 
 #{set title:'Report' /} 
-#{set activePage:'report' /} 
+#{set activePage:'report' /}
 #{include 'nav.html' /}
 
 <section class="ui segment" id="all">
   <div class="ui text" id="h1">List of Donations</div>
-    <div class="ui text">Please select option to filter below</div>
+  <div class="ui text">Please select option to filter below</div>
 
   <div class="ui segment" id="reportSeg">
     <div class="ui list">
@@ -21,6 +21,7 @@
           </tr>
         </thead>
         <tbody>
+      <!-- List of Donations -->
           #{list items:donations, as:'donation'}
           <tr>
             <td>${donation.from.email}</td>
@@ -34,9 +35,11 @@
         #{/list}
       </table>
     </div>
+    <!-- Dropdown and Buttons for Filtering -->
     <div class="ui segment">
       <div class="ui four column grid">
         <div class="four wide column">
+        <!-- Filter by Candidate -->
           <form class="ui form" action="/filterCandidate" method="POST">
             <select class="ui dropdown" name="email"> 
             #{list items:candidates, as:'candidate'}
@@ -45,11 +48,13 @@
             #{/list}
             </select>
             <div class="ui hidden divider"></div>
-            <button type="submit" class="ui green submit button">Filter by Candidate</button>
+            <button type="submit" class="ui green submit button">
+              Filter by Candidate</button>
             <div class="ui error message"></div>
           </form>
         </div>
-         <div class="four wide column">
+        <div class="four wide column">
+        <!-- Filter by Donor -->
           <form class="ui form" action="/filterDonor" method="POST">
             <select class="ui dropdown" name="donorEmail"> 
             #{list items:users, as:'user'}
@@ -58,22 +63,23 @@
             #{/list}
             </select>
             <div class="ui hidden divider"></div>
-            <button type="submit" class="ui green submit button">Filter by Donor</button>
+            <button type="submit" class="ui green submit button">
+              Filter by Donor</button>
             <div class="ui error message"></div>
           </form>
         </div>
-         <div class="four wide column">
+        <div class="four wide column">
+        <!-- Filter by State -->
           <form class="ui form" action="/filterState" method="POST">
             <select class="ui dropdown" name="state"> 
-             
             #{list items:stateList, as:'state'}
               <option value="">Select a State</option>
               <option value="${state}">${state}</option> 
             #{/list}
-         
-           </select>
-           <div class="ui hidden divider"></div>
-            <button type="submit" class="ui green submit button">Filter by State</button>
+            </select>
+            <div class="ui hidden divider"></div>
+            <button type="submit" class="ui green submit button">
+              Filter by State</button>
             <div class="ui error message"></div>
           </form>
         </div>
@@ -86,6 +92,7 @@
       </div>
     </div>
   </div>
-  <img class="ui image" src="/public/images/homerLeft.jpg" id="reportImg">
+    <img class="ui image" src="/public/images/homerLeft.jpg" id="reportImg">
 </section>
+
 <script src="@{'/public/javascripts/report.js'}"></script>

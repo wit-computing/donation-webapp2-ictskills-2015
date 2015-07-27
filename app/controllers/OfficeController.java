@@ -15,16 +15,16 @@ public class OfficeController extends Controller
   @Before
   static void checkAuthentification()
   {
-    if(session.contains("logged_in_adminid") == false)
+    if (session.contains("logged_in_adminid") == false)
       Administrator.login();
   }
-  
+
   public static void index()
   {
     Admin admin = Administrator.getCurrentAdmin();
     render(admin);
   }
-  
+
   public static void newOffice(Office office)
   {
     office.save();

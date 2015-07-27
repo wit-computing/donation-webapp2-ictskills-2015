@@ -32,7 +32,12 @@ GeoLocation(location4):
     latlng: 37.684130,-85.216187
     lat: 37.684130
     lng: -85.216187
-        
+
+GeoLocation(location5):
+    latlng: 42.8414592,-97.93749479999997
+    lat: 42.8414592
+    lng: -97.93749479999997
+            
 Candidate(Celery):
     firstName: Celery
     lastName: Clinton
@@ -64,7 +69,7 @@ Candidate(Harry):
     password: secret
     running: office2
     donationTarget: 30000
-    
+      
 User(Marge):
     firstName: Marge
     lastName: Simpson
@@ -120,7 +125,21 @@ User(Maggie):
     state: Kentucky
     zipCode: 03345
     located: location4
-         
+
+User(Homer): 
+    firstName: Homer
+    lastName: Simpson
+    age: 39
+    email: homer@simpson.com
+    password: secret
+    UsaCitizen: True
+    address1: 701-751
+    address2: College Avenue
+    city: Springfield
+    state: South Dakota
+    zipcode: 57062
+    located: location5
+             
 Donation(donation1):
     methodDonated: paypal
     received: 1000
@@ -178,5 +197,5 @@ Donation(donation9):
 Donation(donation10):
     methodDonated: direct
     received: 100
-    from: Maggie
+    from: Homer
     to: Abamo

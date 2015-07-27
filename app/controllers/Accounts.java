@@ -21,6 +21,9 @@ public class Accounts extends Controller
     render();
   }
 
+  /*
+   * Creates new geolocation, attaches to user and saves
+   */
   public static void register(User user, double latitude, double longitude)
   {
     GeoLocation location = new GeoLocation(latitude, longitude);
@@ -32,7 +35,7 @@ public class Accounts extends Controller
 
   public static void login()
   {
-     render();
+    render();
   }
 
   public static void logout()
@@ -43,7 +46,8 @@ public class Accounts extends Controller
 
   protected static void setSessionLogout()
   {
-    if (session.get("logged_status") != null && session.get("logged_status").equals("logged_in"))
+    if (session.get("logged_status") != null
+        && session.get("logged_status").equals("logged_in"))
     {
       session.clear();
       session.put("logged_status", "logged_out");
@@ -57,7 +61,8 @@ public class Accounts extends Controller
 
     if ((user != null) && (user.checkPassword(password) == true))
     {
-      Logger.info("Successfull authentication of " + user.firstName + " " + user.lastName);
+      Logger.info("Successfull authentication of " + user.firstName + " "
+          + user.lastName);
       session.put("logged_in_userid", user.id);
       session.put("logged_status", "logged_in");
       DonationController.index();
