@@ -144,13 +144,6 @@ function filter() {
 }
 
 /**
- * Clears table row data Restores table data with complete unfiltered user list
- */
-function reset() {
-	location.reload();
-}
-
-/**
  * create and render a polyline on map attaches beginning to end previous
  * polyline if such exists
  */
